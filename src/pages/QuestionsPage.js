@@ -7,15 +7,16 @@ import {
 } from "../assets/code_logic/getCategories";
 import { baseQuestionsEN } from "../DUMMY_DATA/DUMMY_QUESTIONS";
 
-const currentDifferentCategories = getCategories(baseQuestionsEN, "category");
+const questions = baseQuestionsEN;
+const currentDifferentCategories = getCategories(questions, "category");
 const categoriesBuilt = buildCategoryForSelectList(currentDifferentCategories);
 
 export default function QuestionsPage() {
   const [currentCategory, setCurrentCategory] = useState();
+  const [randomQuestion, setRandomQuestion] = useState("");
 
   return (
     <div>
-      {/* <Button text="Testing" onClick={()=>console.log(currentCategories)} /> */}
       <Box padding={3} marginBottom={10}>
         <SelectList
           id="categories"
@@ -27,9 +28,9 @@ export default function QuestionsPage() {
           value={currentCategory}
         />
         <Box margin={4}>
-            <Divider/>
+          <Divider />
         </Box>
-        {baseQuestionsEN
+        {questions
           .filter((elem) => elem.category === currentCategory)
           .map((elem) => (
             <div key={elem.id}>
@@ -42,6 +43,22 @@ export default function QuestionsPage() {
             </div>
           ))}
       </Box>
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <Button
+          text="I'm in a hurry, surprise me"
+          size="md"
+          inline
+          onClick={() => {
+            let rand = Math.round(Math.random() * questions.length);
+            setRandomQuestion(rand);
+          }}
+        />
+      </Box>
+      {randomQuestion === "" ? null : (
+        <Box padding={2} marginTop={2} marginBottom={2}>
+          <Text>{questions[randomQuestion]["question"]}</Text>
+        </Box>
+      )}
     </div>
   );
 }

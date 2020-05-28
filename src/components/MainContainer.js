@@ -8,7 +8,7 @@ export default function MainContainer(props) {
   return (
     <>
       <Box padding={2} color="darkGray">
-        <Text color="white">One On Wonder</Text>
+        <Text color="white">OOW - One On Wonder</Text>
       </Box>
       <Box padding={3}>
         <Tabs
