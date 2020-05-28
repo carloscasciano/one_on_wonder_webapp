@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainContainer from "./components/MainContainer";
 import AboutPage from "./pages/AboutPage";
+import QuestionsPage from "./pages/QuestionsPage"
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -16,9 +17,10 @@ function App() {
       />
 
       {currentPage === 0 ? (
-        <AboutPage />
+        <QuestionsPage/>
+        
       ) : currentPage === 1 ? (
-        <p>Questions</p>
+        <AboutPage />
       ) : currentPage === 2 ? (
         <p>Ice Breakers</p>
       ) : currentPage === 3 ? (
