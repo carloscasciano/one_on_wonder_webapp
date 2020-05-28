@@ -1,5 +1,5 @@
 import React from "react";
-import { Box,  Text } from "gestalt";
+import { Box,  Text, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import {aboutPageText} from "../assets/textData/EN-US/texts";
 
@@ -8,9 +8,9 @@ export default function AboutPage() {
     <div>
       <Box padding={3}>
         <Box>
-          <Text weight="bold" size="lg">
+          <Heading size="sm">
             {aboutPageText[0].mainQuestion}
-          </Text>
+          </Heading>
         </Box>
         <Box marginTop={3}>
           <Text weight="bold" size="md">

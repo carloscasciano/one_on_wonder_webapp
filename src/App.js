@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MainContainer from "./components/MainContainer";
 import AboutPage from "./pages/AboutPage";
 import QuestionsPage from "./pages/QuestionsPage";
+import IceBreakers from "./pages/IceBreakers"
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -17,11 +18,13 @@ function App() {
       />
 
       {currentPage === 0 ? (
-        <QuestionsPage />
+        <IceBreakers />
+        
       ) : currentPage === 1 ? (
-        <AboutPage />
+        <QuestionsPage />
+        
       ) : currentPage === 2 ? (
-        <p>Ice Breakers</p>
+        <AboutPage />
       ) : currentPage === 3 ? (
         <p>Create Session</p>
       ) : currentPage === 4 ? (

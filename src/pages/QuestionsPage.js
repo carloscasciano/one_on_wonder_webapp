@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Box, Text, Button, SelectList, Divider } from "gestalt";
+import { Box, Text, Button, SelectList, Divider, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import {
   getCategories,
   buildCategoryForSelectList,
 } from "../assets/code_logic/getCategories";
+import { questionsPageText } from "../assets/textData/EN-US/texts";
 import { baseQuestionsEN } from "../DUMMY_DATA/DUMMY_QUESTIONS";
 
 const questions = baseQuestionsEN;
@@ -18,16 +19,20 @@ export default function QuestionsPage() {
   return (
     <div>
       <Box padding={3} marginBottom={10}>
-        <SelectList
-          id="categories"
-          name="categories"
-          onChange={({ value }) => setCurrentCategory(value)}
-          options={categoriesBuilt}
-          placeholder="Select category"
-          label="Category"
-          value={currentCategory}
-        />
-        <Box margin={4}>
+        <Heading size="sm">{questionsPageText[0].mainText}</Heading>
+        <Box marginTop={3}>
+          <SelectList
+            id="categories"
+            name="categories"
+            onChange={({ value }) => setCurrentCategory(value)}
+            options={categoriesBuilt}
+            placeholder={questionsPageText[0].categoryBox}
+            label={questionsPageText[0].categoryLabel}
+            value={currentCategory}
+          />
+        </Box>
+
+        <Box margin={2}>
           <Divider />
         </Box>
         {questions
@@ -43,9 +48,14 @@ export default function QuestionsPage() {
             </div>
           ))}
       </Box>
-      <Box display="flex" justifyContent="center" alignItems="center">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        marginBottom={6}
+      >
         <Button
-          text="I'm in a hurry, surprise me"
+          text={questionsPageText[0].randomButton}
           size="md"
           inline
           onClick={() => {
@@ -55,9 +65,13 @@ export default function QuestionsPage() {
         />
       </Box>
       {randomQuestion === "" ? null : (
-        <Box padding={2} marginTop={2} marginBottom={2}>
-          <Text>{questions[randomQuestion]["question"]}</Text>
-        </Box>
+        <>
+          <Divider />
+          <Box padding={2} marginTop={2} marginBottom={2}>
+            <Text>{questions[randomQuestion]["question"]}</Text>
+          </Box>
+          <Divider />
+        </>
       )}
     </div>
   );
