@@ -14,16 +14,39 @@ export default function IceBreakers() {
         {gamesList.map((g) => (
           <div key={g.gameId}>
             <Box padding={3}>
-              <Text>{g.gameId}.</Text>
-              <Text>{g.gameName}</Text>
+              <Text weight="bold" italic={true}>
+                # {g.gameId}
+              </Text>
+              <Text weight="bold">{`${iceBreakersPageText[0].ibName}:`}</Text>
+              <Text> {g.gameName}</Text>
+              <Text weight="bold">
+                {`${iceBreakersPageText[0].ibMaterials}: `}
+              </Text>
+              <Box padding={1}>
+                {g.gameMaterials.map((m) => (
+                  <div key={Math.random()}>
+                    <Text>- {m}</Text>
+                  </div>
+                ))}
+              </Box>
+              <Text weight="bold">
+                {`${iceBreakersPageText[0].ibPlayers}: `}
+              </Text>
+              <Text>{g.gameNumberOfPlayers}</Text>
+              <Text weight="bold">
+                {`${iceBreakersPageText[0].ibAchievement}: `}
+              </Text>
+              <Text>{g.gameAchievement}</Text>
+              <Text weight="bold">
+                {`${iceBreakersPageText[0].ibSummary}: `}
+              </Text>
               <Text>{g.gameDirections}</Text>
-              <Text>Number of Players: {g.gameNumberOfPlayers}</Text>
-              <Text>{g.gameTryTo}</Text>
+
+      
             </Box>
-            <Divider/>
+            <Divider />
           </div>
         ))}
-        
       </Box>
     </div>
   );

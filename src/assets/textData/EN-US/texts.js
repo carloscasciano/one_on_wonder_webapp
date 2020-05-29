@@ -25,5 +25,10 @@ export const iceBreakersPageText = [
   {
     mainText:
       "Icebreakers Games are dynamics to interact, engage, learn and get to know your team members better.",
+    ibName: "Name",
+    ibMaterials: "What you need",
+    ibAchievement: "What you are trying to achieve",
+    ibSummary: "Summary",
+    ibPlayers: "Number of participants",
   },
 ];
