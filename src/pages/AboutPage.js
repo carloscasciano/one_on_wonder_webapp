@@ -14,22 +14,22 @@ export default function AboutPage() {
           </Heading>
         </Box>
         <Box marginTop={3}>
-          <Text weight="bold" size="md">
+          <Text weight="bold" size="lg">
             {aboutPageText[0].subQuestion}
           </Text>
         </Box>
         <Box marginTop={5}>
-          <Text size="md" margin>
+          <Text size="lg" margin>
             {aboutPageText[0].mainText01}
           </Text>
         </Box>
         <Box marginTop={5}>
-          <Text size="md" margin>
+          <Text size="lg" margin>
             {aboutPageText[0].contactInfo}
           </Text>
         </Box>
         <Box marginTop={5}>
-          <Text size="md" margin>
+          <Text size="lg" margin>
             {aboutPageText[0].specialThanks}
           </Text>
         </Box>

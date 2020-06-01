@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, TextArea, Heading, Divider } from "gestalt";
+import { Box, Text, Heading, Divider } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import { iceBreakersPageText } from "../assets/textData/EN-US/texts";
 import { DUMMY_GAMES } from "../DUMMY_DATA/DUMMY_GAMES";

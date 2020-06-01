@@ -13,23 +13,24 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <MainContainer
-        currentPage={currentPage}
-        handlePageChange={handlePageChange}
-      />
+    <div>
+        <MainContainer
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+        />
 
-      {currentPage === 0 ? (
-        <AboutPage />
-      ) : currentPage === 1 ? (
-        <QuestionsPage />
-      ) : currentPage === 2 ? (
-        <CreateSession />
-      ) : currentPage === 3 ? (
-        <OptionsPage />
-      ) : currentPage === 4 ? (
-        <IceBreakers />
-      ) : null}
+        {currentPage === 0 ? (
+          <AboutPage />
+        ) : currentPage === 1 ? (
+          <QuestionsPage />
+        ) : currentPage === 2 ? (
+          <CreateSession />
+        ) : currentPage === 3 ? (
+          <OptionsPage />
+        ) : currentPage === 4 ? (
+          <IceBreakers />
+        ) : null}
+      
     </div>
   );
 }

@@ -12,63 +12,65 @@ export default function OptionsPage() {
   };
 
   return (
-    <Box padding={3}>
-      <Box>
-        <Heading size="sm">Options</Heading>
+    <div >
+      <Box padding={3}>
         <Box>
-          <Text>Language</Text>
+          <Heading size="sm">Options</Heading>
           <Box>
-            <RadioButton
-              id="enus"
-              onChange={() => {}}
-              value="enus"
-              checked
-              label="English"
-            />
-          </Box>
-          <Box display="flex" justifyContent="start" alignItems="center">
-            <RadioButton
-              id="ptbr"
-              onChange={() => {}}
-              value="ptbr"
-              disabled
-              label={`Português`}
-            />
-            <Box marginLeft={3}>
-              <Badge text="Soon!" />
+            <Text>Language</Text>
+            <Box>
+              <RadioButton
+                id="enus"
+                onChange={() => {}}
+                value="enus"
+                checked
+                label="English"
+              />
+            </Box>
+            <Box display="flex" justifyContent="start" alignItems="center">
+              <RadioButton
+                id="ptbr"
+                onChange={() => {}}
+                value="ptbr"
+                disabled
+                label={`Português`}
+              />
+              <Box marginLeft={3}>
+                <Badge text="Soon!" />
+              </Box>
+            </Box>
+            <Box display="flex" justifyContent="start" alignItems="center">
+              <RadioButton
+                id="es"
+                onChange={() => {}}
+                value="es"
+                disabled
+                label={`Español`}
+              />
+              <Box marginLeft={3}>
+                <Badge text="Soon!" />
+              </Box>
             </Box>
           </Box>
-          <Box display="flex" justifyContent="start" alignItems="center">
-            <RadioButton
-              id="es"
-              onChange={() => {}}
-              value="es"
-              disabled
-              label={`Español`}
+          <Box>
+            <Button
+              inline
+              onClick={() => {
+                handleToastVisibility();
+              }}
+              text="Save"
+              color="gray"
+              textColor="darkGray"
+              size="sm"
             />
-            <Box marginLeft={3}>
-              <Badge text="Soon!" />
+          </Box>
+          {toastVisibility && (
+            <Box padding={5}>
+              <Toast text={<>Saved!</>} />
             </Box>
-          </Box>
+          )}
         </Box>
-        <Box>
-          <Button
-            inline
-            onClick={() => {
-              handleToastVisibility();
-            }}
-            text="Save"
-            color="gray"
-            textColor="darkGray"
-            size="sm"
-          />
-        </Box>
-        {toastVisibility && (
-          <Box padding={5}>
-            <Toast text={<>Saved!</>} />
-          </Box>
-        )}
       </Box>
-    </Box>
+    </div>
   );
 }
