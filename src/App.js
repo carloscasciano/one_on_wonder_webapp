@@ -13,7 +13,15 @@ function App() {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#eee", height:"100vh" }}>
+      <div
+        style={{
+          maxWidth: "800px",
+          margin: "0 auto",
+          backgroundColor: "white",
+          height: "100%",
+        }}
+      >
         <MainContainer
           currentPage={currentPage}
           handlePageChange={handlePageChange}
@@ -30,7 +38,7 @@ function App() {
         ) : currentPage === 4 ? (
           <IceBreakers />
         ) : null}
-      
+      </div>
     </div>
   );
 }

@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Tabs, Box, Divider, Text, Button, Heading } from "gestalt";
+import React from "react";
+import { Tabs, Box, Divider,  Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 
 export default function MainContainer(props) {
-  const [menuVisibility, setMenuVisibility] = useState(false);
+  /* const [menuVisibility, setMenuVisibility] = useState(false); */
 
   return (
     <>
       <Box padding={2} color="darkGray" display="flex" justifyContent="between">
         <Heading color="white">OOW</Heading>
-        <Button
+        {/* <Button
           inline
           text={menuVisibility?"Close Menu":"Open Menu"}
           onClick={
@@ -17,10 +17,10 @@ export default function MainContainer(props) {
               ? () => setMenuVisibility(false)
               : () => setMenuVisibility(true)
           }
-        />
+        /> */}
       </Box>
 
-      {menuVisibility ? (
+      
         <Box padding={3}>
           <Tabs
             tabs={[
@@ -33,11 +33,11 @@ export default function MainContainer(props) {
                 href: "#",
               },
               {
-                text: "Create Session",
+                text: "Session",
                 href: "#",
               },
               {
-                text: "Menu",
+                text: "Options",
                 href: "#",
               },
               /* {
@@ -47,12 +47,10 @@ export default function MainContainer(props) {
             ]}
             activeTabIndex={props.currentPage}
             onChange={props.handlePageChange}
-            wrap={true}
-            size="sm"
+            wrap={false}
+            size="md"
           />
         </Box>
-      ) : null}
-
       <Divider />
     </>
   );
