@@ -27,13 +27,13 @@ export default function CreateSession() {
 
   const summaryText = (
     <>
-      <Text>On {sessionDate},</Text>
-      <Text>I talked with {teamMemberName}.</Text>
-      <Text>The main feeling of this session was '{currentFeeling}'.</Text>
+      <Text size="lg">On {sessionDate},</Text>
+      <Text size="lg">I talked with {teamMemberName}.</Text>
+      <Text size="lg">The main feeling of this session was '{currentFeeling}'.</Text>
       <Box marginTop={3}>
-        <Text>My notes were:</Text>
+        <Text size="lg">My notes were:</Text>
         {sessionNotes.map((n) => (
-          <Text key={Math.random()}>- {n}</Text>
+          <Text key={Math.random()} size="lg">- {n}</Text>
         ))}{" "}
       </Box>
     </>
@@ -129,7 +129,7 @@ export default function CreateSession() {
             sessionDate !== "" &&
             currentFeeling !== "" ? (
               <>
-                <Text>{summaryText}</Text>
+                <Text size="lg">{summaryText}</Text>
                 <Box marginTop={3}>
                   <CopyToClipboard text={copyToClipboardText}>
                     <Button

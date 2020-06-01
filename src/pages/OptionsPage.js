@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Text, Heading, RadioButton, Button, Toast, Badge} from "gestalt";
+import { Box, Text, Heading, RadioButton, Button, Toast, Badge } from "gestalt";
 import "gestalt/dist/gestalt.css";
 
 export default function OptionsPage() {
@@ -12,12 +12,12 @@ export default function OptionsPage() {
   };
 
   return (
-    <div >
+    <div>
       <Box padding={3}>
         <Box>
           <Heading size="sm">Options</Heading>
           <Box marginTop={3} paddingX={3}>
-            <Text>Language</Text>
+            <Text size="lg">Language</Text>
             <Box marginTop={1} paddingX={3}>
               <RadioButton
                 id="enus"
@@ -27,7 +27,13 @@ export default function OptionsPage() {
                 label="English"
               />
             </Box>
-            <Box marginTop={1} paddingX={3} display="flex" justifyContent="start" alignItems="center">
+            <Box
+              marginTop={1}
+              paddingX={3}
+              display="flex"
+              justifyContent="start"
+              alignItems="center"
+            >
               <RadioButton
                 id="ptbr"
                 onChange={() => {}}
@@ -39,7 +45,13 @@ export default function OptionsPage() {
                 <Badge text="Soon!" />
               </Box>
             </Box>
-            <Box marginTop={1} paddingX={3} display="flex" justifyContent="start" alignItems="center">
+            <Box
+              marginTop={1}
+              paddingX={3}
+              display="flex"
+              justifyContent="start"
+              alignItems="center"
+            >
               <RadioButton
                 id="es"
                 onChange={() => {}}
