@@ -22,10 +22,6 @@ export default function MainContainer(props) {
               href: "#",
             },
             {
-              text: "Ice Breakers",
-              href: "#",
-            },
-            {
               text: "Create Session",
               href: "#",
             },
@@ -33,6 +29,10 @@ export default function MainContainer(props) {
               text: "Menu",
               href: "#",
             },
+            /* {
+              text: "Ice Breakers",
+              href: "#",
+            }, */
           ]}
           activeTabIndex={props.currentPage}
           onChange={props.handlePageChange}
