@@ -3,6 +3,8 @@ import MainContainer from "./components/MainContainer";
 import AboutPage from "./pages/AboutPage";
 import QuestionsPage from "./pages/QuestionsPage";
 import IceBreakers from "./pages/IceBreakers"
+import CreateSession from "./pages/CreateSession"
+import OptionsPage from "./pages/OptionsPage"
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -18,17 +20,21 @@ function App() {
       />
 
       {currentPage === 0 ? (
-        <IceBreakers />
+        <OptionsPage />
+        
+        
+        
         
       ) : currentPage === 1 ? (
         <QuestionsPage />
         
       ) : currentPage === 2 ? (
-        <AboutPage />
+        <IceBreakers />
+        
       ) : currentPage === 3 ? (
-        <p>Create Session</p>
+        <CreateSession />
       ) : currentPage === 4 ? (
-        <p>Menu</p>
+        <AboutPage />
       ) : null}
     </div>
   );

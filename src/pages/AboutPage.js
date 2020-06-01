@@ -3,6 +3,7 @@ import { Box,  Text, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import {aboutPageText} from "../assets/textData/EN-US/texts";
 
+
 export default function AboutPage() {
   return (
     <div>
@@ -33,6 +34,7 @@ export default function AboutPage() {
           </Text>
         </Box>
       </Box>
+
     </div>
   );
 }
