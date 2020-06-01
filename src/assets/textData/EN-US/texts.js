@@ -35,7 +35,7 @@ export const iceBreakersPageText = [
 
 export const createSessionPageText = [
   {
-    mainText: "Why not create a small guide to help you on your next meeting? Use the space below to create a session with one of your team members.",
+    mainText: "Use this area to create a session with anyone.",
 
   }
 ]

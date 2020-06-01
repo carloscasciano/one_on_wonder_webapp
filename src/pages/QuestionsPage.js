@@ -18,7 +18,7 @@ export default function QuestionsPage() {
 
   return (
     <div>
-      <Box padding={3} marginBottom={10}>
+      <Box padding={3} marginBottom={3}>
         <Heading size="sm">{questionsPageText[0].mainText}</Heading>
         <Box marginTop={3}>
           <SelectList
@@ -52,7 +52,7 @@ export default function QuestionsPage() {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        marginBottom={6}
+        marginBottom={3}
       >
         <Button
           text={questionsPageText[0].randomButton}
@@ -66,11 +66,11 @@ export default function QuestionsPage() {
       </Box>
       {randomQuestion === "" ? null : (
         <>
-          <Divider />
+      
           <Box padding={2} marginTop={2} marginBottom={2}>
             <Text>{questions[randomQuestion]["question"]}</Text>
           </Box>
-          <Divider />
+          
         </>
       )}
     </div>

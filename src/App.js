@@ -13,7 +13,14 @@ function App() {
   };
 
   return (
-    <div style={{ backgroundColor: "#eee", height:"100vh" }}>
+    <div
+      style={{
+        backgroundColor: "rgba(0,0,0,0.1)",
+        height: "100vh",
+        /* backgroundImage: `url("https://www.transparenttextures.com/patterns/bright-squares.png")`, */
+        
+      }}
+    >
       <div
         style={{
           maxWidth: "800px",
@@ -28,11 +35,12 @@ function App() {
         />
 
         {currentPage === 0 ? (
-          <AboutPage />
+          <CreateSession />
         ) : currentPage === 1 ? (
           <QuestionsPage />
         ) : currentPage === 2 ? (
-          <CreateSession />
+          <AboutPage />
+          
         ) : currentPage === 3 ? (
           <OptionsPage />
         ) : currentPage === 4 ? (
