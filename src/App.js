@@ -15,10 +15,9 @@ function App() {
   return (
     <div
       style={{
-        backgroundColor: "rgba(0,0,0,0.1)",
-        height: "100vh",
-        /* backgroundImage: `url("https://www.transparenttextures.com/patterns/bright-squares.png")`, */
-        
+        backgroundColor: "rgba(0,0,0,0.05)",
+        minHeight: "100vh",
+        backgroundRepeat: "repeat",
       }}
     >
       <div
@@ -26,7 +25,7 @@ function App() {
           maxWidth: "800px",
           margin: "0 auto",
           backgroundColor: "white",
-          height: "100%",
+          minHeight: "100vh",
         }}
       >
         <MainContainer
@@ -35,14 +34,13 @@ function App() {
         />
 
         {currentPage === 0 ? (
-          <CreateSession />
+          <OptionsPage />
         ) : currentPage === 1 ? (
           <QuestionsPage />
         ) : currentPage === 2 ? (
-          <AboutPage />
-          
+          <CreateSession />
         ) : currentPage === 3 ? (
-          <OptionsPage />
+          <AboutPage />
         ) : currentPage === 4 ? (
           <IceBreakers />
         ) : null}

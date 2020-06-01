@@ -56,21 +56,20 @@ export default function QuestionsPage() {
       >
         <Button
           text={questionsPageText[0].randomButton}
-          size="md"
+          size="sm"
           inline
           onClick={() => {
-            let rand = Math.round(Math.random() * questions.length);
+            let rand = Math.floor(Math.random() * questions.length );
+            console.log(rand)
             setRandomQuestion(rand);
           }}
         />
       </Box>
       {randomQuestion === "" ? null : (
         <>
-      
-          <Box padding={2} marginTop={2} marginBottom={2}>
-            <Text>{questions[randomQuestion]["question"]}</Text>
+          <Box marginTop={5} marginBottom={2} display="flex" justifyContent="center">
+            <Text size="lg" weight="bold">{questions[randomQuestion]["question"]}</Text>
           </Box>
-          
         </>
       )}
     </div>

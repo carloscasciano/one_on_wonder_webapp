@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Text, Heading, RadioButton, Button, Toast, Badge } from "gestalt";
+import { Box, Text, Heading, RadioButton, Button, Toast, Badge} from "gestalt";
 import "gestalt/dist/gestalt.css";
 
 export default function OptionsPage() {
@@ -16,9 +16,9 @@ export default function OptionsPage() {
       <Box padding={3}>
         <Box>
           <Heading size="sm">Options</Heading>
-          <Box>
+          <Box marginTop={3} paddingX={3}>
             <Text>Language</Text>
-            <Box>
+            <Box marginTop={1} paddingX={3}>
               <RadioButton
                 id="enus"
                 onChange={() => {}}
@@ -27,7 +27,7 @@ export default function OptionsPage() {
                 label="English"
               />
             </Box>
-            <Box display="flex" justifyContent="start" alignItems="center">
+            <Box marginTop={1} paddingX={3} display="flex" justifyContent="start" alignItems="center">
               <RadioButton
                 id="ptbr"
                 onChange={() => {}}
@@ -39,7 +39,7 @@ export default function OptionsPage() {
                 <Badge text="Soon!" />
               </Box>
             </Box>
-            <Box display="flex" justifyContent="start" alignItems="center">
+            <Box marginTop={1} paddingX={3} display="flex" justifyContent="start" alignItems="center">
               <RadioButton
                 id="es"
                 onChange={() => {}}
@@ -52,8 +52,9 @@ export default function OptionsPage() {
               </Box>
             </Box>
           </Box>
-          <Box>
+          <Box marginTop={4}>
             <Button
+              disabled
               inline
               onClick={() => {
                 handleToastVisibility();
