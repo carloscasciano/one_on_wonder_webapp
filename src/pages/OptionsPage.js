@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Text, Heading, RadioButton, Button, Toast, Badge } from "gestalt";
 import "gestalt/dist/gestalt.css";
+import { optionsPageText } from "../assets/textData/enus/texts";
 
 export default function OptionsPage() {
   const [toastVisibility, setToastVisibility] = useState(false);
@@ -15,9 +16,9 @@ export default function OptionsPage() {
     <div>
       <Box padding={3}>
         <Box>
-          <Heading size="sm">Options</Heading>
+          <Heading size="sm">{optionsPageText[0].mainText}</Heading>
           <Box marginTop={3} paddingX={3}>
-            <Text size="lg">Language</Text>
+            <Text size="lg">{optionsPageText[0].languageMenuText}</Text>
             <Box marginTop={1} paddingX={3}>
               <RadioButton
                 id="enus"
@@ -107,7 +108,7 @@ export default function OptionsPage() {
               onClick={() => {
                 handleToastVisibility();
               }}
-              text="Save"
+              text={optionsPageText[0].saveButtom}
               color="gray"
               textColor="darkGray"
               size="sm"
@@ -115,7 +116,7 @@ export default function OptionsPage() {
           </Box>
           {toastVisibility && (
             <Box padding={5}>
-              <Toast text={<>Saved!</>} />
+              <Toast text={<>{optionsPageText[0].toastSaveText}</>} />
             </Box>
           )}
         </Box>

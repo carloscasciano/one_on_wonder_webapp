@@ -27,13 +27,21 @@ export default function CreateSession() {
 
   const summaryText = (
     <>
-      <Text size="lg">On {sessionDate},</Text>
-      <Text size="lg">I talked with {teamMemberName}.</Text>
       <Text size="lg">
-        The main feeling of this session was '{currentFeeling}'.
+        {createSessionPageText[0].summaryText[0].preDateText} {sessionDate},
+      </Text>
+      <Text size="lg">
+        {createSessionPageText[0].summaryText[0].preTeamMemberText}{" "}
+        {teamMemberName}.
+      </Text>
+      <Text size="lg">
+        {createSessionPageText[0].summaryText[0].preFeelingText} '
+        {currentFeeling}'.
       </Text>
       <Box marginTop={3}>
-        <Text size="lg">My notes were:</Text>
+        <Text size="lg">
+          {createSessionPageText[0].summaryText[0].preNotesText}
+        </Text>
         {sessionNotes.map((n) => (
           <Text key={Math.random()} size="lg">
             - {n}
@@ -42,9 +50,15 @@ export default function CreateSession() {
       </Box>
     </>
   );
-  const copyToClipboardText = `On ${sessionDate},\nI talked with ${teamMemberName}.\nThe main feeling of this session was '${currentFeeling}'.\nMy notes were: \n${sessionNotes
-    .map((note) => " - " + note + "\n")
-    .join("")}`;
+  const copyToClipboardText = `${
+    createSessionPageText[0].summaryText[0].preDateText
+  } ${sessionDate},\n${
+    createSessionPageText[0].summaryText[0].preTeamMemberText
+  } ${teamMemberName}.\n${
+    createSessionPageText[0].summaryText[0].preFeelingText
+  } '${currentFeeling}'.\n${
+    createSessionPageText[0].summaryText[0].preNotesText
+  } \n${sessionNotes.map((note) => " - " + note + "\n").join("")}`;
 
   const handleToastVisibility = () => {
     setToastVisibility(true);
@@ -65,7 +79,7 @@ export default function CreateSession() {
               id="teamMember"
               onChange={({ value }) => setTeamMemberName(value)}
               placeholder="Eric Anthony"
-              label="Who are you talking to?"
+              label={createSessionPageText[0].memberLabel}
               value={teamMemberName}
               type="text"
             />
@@ -76,7 +90,7 @@ export default function CreateSession() {
               id="date"
               onChange={({ value }) => setSessionDate(value)}
               placeholder="01/01/2020"
-              label="When?"
+              label={createSessionPageText[0].memberLabel}
               value={sessionDate}
               type="date"
             />
@@ -88,8 +102,8 @@ export default function CreateSession() {
               name="feelings"
               onChange={({ value }) => setCurrentFeeling(value)}
               options={feelingOptions}
-              placeholder="Choose a dominant feeling"
-              label="How is your team member feeling?"
+              placeholder={createSessionPageText[0].feelingPlaceholder}
+              label={createSessionPageText[0].feelingLabel}
               value={currentFeeling}
             />
           </Box>
@@ -98,8 +112,8 @@ export default function CreateSession() {
             <TextField
               id="notes"
               onChange={({ value }) => setUserSingleNote(value)}
-              placeholder="Eric is glad his wife got a new job."
-              label="Use field below to add comments, next steps or anything you feel it is important."
+              placeholder={createSessionPageText[0].notesPlaceholder}
+              label={createSessionPageText[0].notesLabel}
               value={userSingleNote}
               type="text"
             />
@@ -113,18 +127,7 @@ export default function CreateSession() {
                       }
                     : null
                 }
-                text="Add Note"
-                color="gray"
-                textColor="darkGray"
-                size="sm"
-              />
-            </Box>
-            <Box marginTop={2}>
-              <Button
-                onClick={() => {
-                  console.log("Open Modal for Questions");
-                }}
-                text="Add Question"
+                text={createSessionPageText[0].addNoteButtomText}
                 color="gray"
                 textColor="darkGray"
                 size="sm"
@@ -141,7 +144,7 @@ export default function CreateSession() {
             alignItems="center"
             justifyContent="start"
           >
-            <Heading size="sm">Summary</Heading>
+            <Heading size="sm">{createSessionPageText[0].summary}</Heading>
           </Box>
           <Box marginTop={4}>
             {teamMemberName !== "" &&
@@ -164,7 +167,7 @@ export default function CreateSession() {
               </>
             ) : (
               <Box marginLeft={2}>
-                <Badge text="Add a team member, a date and feeling." />
+                <Badge text={createSessionPageText[0].summaryBadge} />
               </Box>
             )}
           </Box>
@@ -172,7 +175,7 @@ export default function CreateSession() {
 
         {toastVisibility && (
           <Box padding={5}>
-            <Toast text={<>Go CTRL+V anywhere!</>} />
+            <Toast text={<>{createSessionPageText[0].toastText}</>} />
           </Box>
         )}
       </Box>

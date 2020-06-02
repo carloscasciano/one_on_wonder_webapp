@@ -3,7 +3,6 @@ import { Tabs, Box, Divider, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import { headerText } from "../assets/textData/enus/texts";
 
-
 export default function MainContainer(props) {
   return (
     <>
