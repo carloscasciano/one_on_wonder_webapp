@@ -5,9 +5,11 @@ import QuestionsPage from "./pages/QuestionsPage";
 import IceBreakers from "./pages/IceBreakers";
 import CreateSession from "./pages/CreateSession";
 import OptionsPage from "./pages/OptionsPage";
+import * as ENUS from "./assets/textData/enus/texts";
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [currentLanguage, setCurrentLanguage] = useState(ENUS);
   const handlePageChange = ({ activeTabIndex, event }) => {
     setCurrentPage(activeTabIndex);
   };
@@ -31,16 +33,20 @@ function App() {
         <MainContainer
           currentPage={currentPage}
           handlePageChange={handlePageChange}
+          currentLanguage={currentLanguage}
         />
 
         {currentPage === 0 ? (
-          <AboutPage />
+          <AboutPage currentLanguage={currentLanguage} />
         ) : currentPage === 1 ? (
-          <QuestionsPage />
+          <QuestionsPage currentLanguage={currentLanguage}/>
         ) : currentPage === 2 ? (
-          <CreateSession />
+          <CreateSession currentLanguage={currentLanguage}/>
         ) : currentPage === 3 ? (
-          <OptionsPage />
+          <OptionsPage
+            currentLanguage={currentLanguage}
+            setCurrentLanguage={setCurrentLanguage}
+          />
         ) : currentPage === 4 ? (
           <IceBreakers />
         ) : null}

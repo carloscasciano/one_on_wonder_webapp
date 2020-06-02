@@ -1,9 +1,12 @@
 import React from "react";
 import { Tabs, Box, Divider, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
-import { headerText } from "../assets/textData/enus/texts";
+import { textData } from "../assets/code_logic/getLanguageTexts";
+
+let headerText = textData.headerText;
 
 export default function MainContainer(props) {
+  headerText = props.currentLanguage.headerText
   return (
     <>
       <Box padding={2} color="darkGray" display="flex" justifyContent="between">

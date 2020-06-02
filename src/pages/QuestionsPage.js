@@ -5,11 +5,14 @@ import {
   getCategories,
   buildCategoryForSelectList,
 } from "../assets/code_logic/getCategories";
-import { questionsPageText } from "../assets/textData/enus/texts";
 /* import { baseQuestionsEN } from "../DUMMY_DATA/DUMMY_QUESTIONS"; */
 import { getRawQuestionsData } from "../fetchData/fetchQuestions";
+import { textData } from "../assets/code_logic/getLanguageTexts";
 
-export default function QuestionsPage() {
+let questionsPageText = textData.questionsPageText;
+
+export default function QuestionsPage(props) {
+  questionsPageText = props.currentLanguage.questionsPageText
   const [questions, setQuestions] = useState([]);
   const [currentCategory, setCurrentCategory] = useState();
   const [randomQuestion, setRandomQuestion] = useState("");

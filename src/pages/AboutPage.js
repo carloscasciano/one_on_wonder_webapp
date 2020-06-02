@@ -1,16 +1,17 @@
 import React from "react";
-import { Box,  Text, Heading } from "gestalt";
+import { Box, Text, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
-import {aboutPageText} from "../assets/textData/enus/texts";
+import { textData } from "../assets/code_logic/getLanguageTexts";
 
-export default function AboutPage() {
+let aboutPageText = textData.aboutPageText;
+
+export default function AboutPage(props) {
+  aboutPageText = props.currentLanguage.aboutPageText
   return (
     <div>
       <Box paddingY={4} paddingX={4}>
         <Box>
-          <Heading size="sm">
-            {aboutPageText[0].mainQuestion}
-          </Heading>
+          <Heading size="sm">{aboutPageText[0].mainQuestion}</Heading>
         </Box>
         <Box marginTop={3}>
           <Text weight="bold" size="lg">
@@ -33,7 +34,6 @@ export default function AboutPage() {
           </Text>
         </Box>
       </Box>
-
     </div>
   );
 }

@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import { Box, Text, Heading, RadioButton, Button, Toast, Badge } from "gestalt";
 import "gestalt/dist/gestalt.css";
-import { optionsPageText } from "../assets/textData/enus/texts";
+import { textData } from "../assets/code_logic/getLanguageTexts";
 
-export default function OptionsPage() {
+/* TEST */
+import {getLanguageTexts} from "../assets/code_logic/getLanguageTexts"
+
+
+ let optionsPageText = textData.optionsPageText;
+
+export default function OptionsPage(props) {
+  optionsPageText = props.currentLanguage.optionsPageText
   const [toastVisibility, setToastVisibility] = useState(false);
   const handleToastVisibility = () => {
     setToastVisibility(true);
@@ -15,6 +22,9 @@ export default function OptionsPage() {
   return (
     <div>
       <Box padding={3}>
+        <button onClick={()=>props.setCurrentLanguage(getLanguageTexts('ptbr'))}>PORTUGUES</button>
+        <button onClick={()=>props.setCurrentLanguage(getLanguageTexts('enus'))}>INGLES</button>
+        <button onClick={()=>console.log("LINGUA: ", props.currentLanguage)}>QUAL LINGUA?</button>
         <Box>
           <Heading size="sm">{optionsPageText[0].mainText}</Heading>
           <Box marginTop={3} paddingX={3}>
