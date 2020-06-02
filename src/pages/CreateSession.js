@@ -9,12 +9,11 @@ import {
   SelectList,
   Toast,
   Badge,
-  Layer,
 } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import DUMMY_FEELINGS from "../DUMMY_DATA/DUMMY_FEELINGS";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { createSessionPageText } from "../assets/textData/EN-US/texts";
+import { createSessionPageText } from "../assets/textData/enus/texts";
 
 const feelingOptions = DUMMY_FEELINGS;
 

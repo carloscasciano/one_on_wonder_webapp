@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Text, Heading, Divider } from "gestalt";
 import "gestalt/dist/gestalt.css";
-import { iceBreakersPageText } from "../assets/textData/EN-US/texts";
+import { iceBreakersPageText } from "../assets/textData/enus/texts";
 import { DUMMY_GAMES } from "../DUMMY_DATA/DUMMY_GAMES";
 
 const gamesList = DUMMY_GAMES;

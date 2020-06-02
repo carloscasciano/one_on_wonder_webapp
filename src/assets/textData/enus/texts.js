@@ -1,3 +1,13 @@
+export const headerText = [
+  {
+    about: "About",
+    questions: "Questions",
+    session: "One on One",
+    options: "Options"
+  }
+]
+
+
 export const aboutPageText = [
   {
     mainQuestion:

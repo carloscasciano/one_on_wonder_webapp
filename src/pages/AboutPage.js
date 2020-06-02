@@ -1,7 +1,7 @@
 import React from "react";
 import { Box,  Text, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
-import {aboutPageText} from "../assets/textData/EN-US/texts";
+import {aboutPageText} from "../assets/textData/enus/texts";
 
 
 export default function AboutPage() {

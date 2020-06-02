@@ -5,7 +5,7 @@ import {
   getCategories,
   buildCategoryForSelectList,
 } from "../assets/code_logic/getCategories";
-import { questionsPageText } from "../assets/textData/EN-US/texts";
+import { questionsPageText } from "../assets/textData/enus/texts";
 /* import { baseQuestionsEN } from "../DUMMY_DATA/DUMMY_QUESTIONS"; */
 import { getRawQuestionsData } from "../fetchData/fetchQuestions";
 
