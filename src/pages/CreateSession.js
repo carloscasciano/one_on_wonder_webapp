@@ -51,7 +51,7 @@ export default function CreateSession() {
 
   return (
     <div>
-      <Box padding={3}>
+      <Box paddingY={4} paddingX={4}>
         <Box marginBottom={3}>
           <Heading size="sm">{createSessionPageText[0].mainText}</Heading>
         </Box>

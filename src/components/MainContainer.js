@@ -8,7 +8,7 @@ export default function MainContainer(props) {
   return (
     <>
       <Box padding={2} color="darkGray" display="flex" justifyContent="between">
-        <Heading color="white">OOW</Heading>
+        <Heading color="white">One On Wonder</Heading>
         {/* <Button
           inline
           text={menuVisibility?"Close Menu":"Open Menu"}
@@ -21,7 +21,7 @@ export default function MainContainer(props) {
       </Box>
 
       
-        <Box padding={3}>
+        <Box paddingX={6} paddingY={1}>
           <Tabs
             tabs={[
               {

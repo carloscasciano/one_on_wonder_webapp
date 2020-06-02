@@ -7,7 +7,7 @@ import {aboutPageText} from "../assets/textData/EN-US/texts";
 export default function AboutPage() {
   return (
     <div>
-      <Box padding={3}>
+      <Box paddingY={4} paddingX={4}>
         <Box>
           <Heading size="sm">
             {aboutPageText[0].mainQuestion}

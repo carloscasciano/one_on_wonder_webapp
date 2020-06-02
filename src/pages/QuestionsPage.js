@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Text, Button, SelectList, Divider, Heading } from "gestalt";
+import { Box, Text, Button, SelectList, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import {
   getCategories,
@@ -18,7 +18,7 @@ export default function QuestionsPage() {
 
   return (
     <div>
-      <Box padding={3} marginBottom={3}>
+      <Box paddingY={4} paddingX={4}>
         <Heading size="sm">{questionsPageText[0].mainText}</Heading>
         <Box marginTop={3}>
           <SelectList
@@ -32,19 +32,16 @@ export default function QuestionsPage() {
           />
         </Box>
 
-        <Box margin={2}>
-          <Divider />
-        </Box>
+        <Box margin={2}></Box>
         {questions
           .filter((elem) => elem.category === currentCategory)
           .map((elem) => (
             <div key={elem.id}>
-              <Box padding={2} marginTop={2} marginBottom={2}>
+              <Box paddingX={6} marginTop={6} marginBottom={2}>
                 <Text>
                   #{elem.id} - {elem.question}
                 </Text>
               </Box>
-              <Divider />
             </div>
           ))}
       </Box>
@@ -59,16 +56,23 @@ export default function QuestionsPage() {
           size="sm"
           inline
           onClick={() => {
-            let rand = Math.floor(Math.random() * questions.length );
-            console.log(rand)
+            let rand = Math.floor(Math.random() * questions.length);
             setRandomQuestion(rand);
           }}
         />
       </Box>
       {randomQuestion === "" ? null : (
         <>
-          <Box marginTop={5} marginBottom={2} display="flex" justifyContent="center">
-            <Text size="lg" weight="bold">{questions[randomQuestion]["question"]}</Text>
+          <Box
+            marginTop={5}
+            marginBottom={2}
+            paddingX={12}
+            display="flex"
+            justifyContent="center"
+          >
+            <Text size="lg" weight="bold">
+              {questions[randomQuestion]["question"]}
+            </Text>
           </Box>
         </>
       )}
