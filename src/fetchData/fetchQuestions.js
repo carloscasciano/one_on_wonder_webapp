@@ -1,22 +1,19 @@
-/* http://localhost:3001/enus/questions.js */
+const axios = require("axios");
 
-const axios = require('axios');
+async function axiosGetRawQuestionsData() {
+  try {
+    const response = await axios.get(
+      `http://young-wildwood-47504.herokuapp.com/enus/questions.json`
+    )
+    return response.data
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-const questionsData = axios.get('http://localhost:3001/enus/questions.json')
-.then(function (response) {
-  // handle success
-  console.log(response);
-})
-.catch(function (error) {
-  // handle error
-  console.log(error);
-})
-.then(function () {
-  // always executed
-});
+async function getRawQuestionsData() {
+  let questionsData = await axiosGetRawQuestionsData()
+  return questionsData
+}
 
-
-export default questionsData
-
-
-
+export { getRawQuestionsData };

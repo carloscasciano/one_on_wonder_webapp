@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Text, Button, SelectList, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import {
@@ -6,15 +6,27 @@ import {
   buildCategoryForSelectList,
 } from "../assets/code_logic/getCategories";
 import { questionsPageText } from "../assets/textData/EN-US/texts";
-import { baseQuestionsEN } from "../DUMMY_DATA/DUMMY_QUESTIONS";
-
-const questions = baseQuestionsEN;
-const currentDifferentCategories = getCategories(questions, "category");
-const categoriesBuilt = buildCategoryForSelectList(currentDifferentCategories);
+/* import { baseQuestionsEN } from "../DUMMY_DATA/DUMMY_QUESTIONS"; */
+import { getRawQuestionsData } from "../fetchData/fetchQuestions";
 
 export default function QuestionsPage() {
+  const [questions, setQuestions] = useState([]);
   const [currentCategory, setCurrentCategory] = useState();
   const [randomQuestion, setRandomQuestion] = useState("");
+
+  useEffect(() => {
+    const questionsData = getRawQuestionsData();
+    questionsData.then(function (value) {
+      const qData = [...value];
+      setQuestions(qData);
+      return qData;
+    });
+  }, []);
+
+  const currentDifferentCategories = getCategories(questions, "category");
+  const categoriesBuilt = buildCategoryForSelectList(
+    currentDifferentCategories
+  );
 
   return (
     <div>

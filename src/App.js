@@ -41,7 +41,6 @@ function App() {
           <CreateSession />
         ) : currentPage === 3 ? (
           <OptionsPage />
-          
         ) : currentPage === 4 ? (
           <IceBreakers />
         ) : null}
