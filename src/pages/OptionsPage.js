@@ -53,6 +53,42 @@ export default function OptionsPage() {
               alignItems="center"
             >
               <RadioButton
+                id="it"
+                onChange={() => {}}
+                value="it"
+                disabled
+                label={`Italiano`}
+              />
+              <Box marginLeft={3}>
+                <Badge text="Soon!" />
+              </Box>
+            </Box>
+            <Box
+              marginTop={1}
+              paddingX={3}
+              display="flex"
+              justifyContent="start"
+              alignItems="center"
+            >
+              <RadioButton
+                id="fr"
+                onChange={() => {}}
+                value="fr"
+                disabled
+                label={`Française`}
+              />
+              <Box marginLeft={3}>
+                <Badge text="Soon!" />
+              </Box>
+            </Box>
+            <Box
+              marginTop={1}
+              paddingX={3}
+              display="flex"
+              justifyContent="start"
+              alignItems="center"
+            >
+              <RadioButton
                 id="es"
                 onChange={() => {}}
                 value="es"

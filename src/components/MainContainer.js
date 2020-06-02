@@ -3,21 +3,12 @@ import { Tabs, Box, Divider,  Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 
 export default function MainContainer(props) {
-  /* const [menuVisibility, setMenuVisibility] = useState(false); */
+
 
   return (
     <>
       <Box padding={2} color="darkGray" display="flex" justifyContent="between">
-        <Heading color="white">One On Wonder</Heading>
-        {/* <Button
-          inline
-          text={menuVisibility?"Close Menu":"Open Menu"}
-          onClick={
-            menuVisibility
-              ? () => setMenuVisibility(false)
-              : () => setMenuVisibility(true)
-          }
-        /> */}
+        <Heading color="white" size="md">One On Wonder</Heading>
       </Box>
 
       

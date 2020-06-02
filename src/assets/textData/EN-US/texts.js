@@ -17,7 +17,7 @@ export const questionsPageText = [
       "Use these questions to explore your team members feelings and how they are doing.",
     categoryLabel: "Category",
     categoryBox: "Select Category",
-    randomButton: "I'm in a hurry, surprise me",
+    randomButton: "Give me a quick random question",
   },
 ];
 
