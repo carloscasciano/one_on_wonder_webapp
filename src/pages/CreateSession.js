@@ -9,6 +9,7 @@ import {
   SelectList,
   Toast,
   Badge,
+  Layer,
 } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import DUMMY_FEELINGS from "../DUMMY_DATA/DUMMY_FEELINGS";
@@ -29,11 +30,15 @@ export default function CreateSession() {
     <>
       <Text size="lg">On {sessionDate},</Text>
       <Text size="lg">I talked with {teamMemberName}.</Text>
-      <Text size="lg">The main feeling of this session was '{currentFeeling}'.</Text>
+      <Text size="lg">
+        The main feeling of this session was '{currentFeeling}'.
+      </Text>
       <Box marginTop={3}>
         <Text size="lg">My notes were:</Text>
         {sessionNotes.map((n) => (
-          <Text key={Math.random()} size="lg">- {n}</Text>
+          <Text key={Math.random()} size="lg">
+            - {n}
+          </Text>
         ))}{" "}
       </Box>
     </>
@@ -101,11 +106,26 @@ export default function CreateSession() {
             />
             <Box marginTop={2}>
               <Button
-                onClick={() => {
-                  setSessionNotes(sessionNotes.concat(userSingleNote));
-                  setUserSingleNote("");
-                }}
+                onClick={
+                  userSingleNote !== ""
+                    ? () => {
+                        setSessionNotes(sessionNotes.concat(userSingleNote));
+                        setUserSingleNote("");
+                      }
+                    : null
+                }
                 text="Add Note"
+                color="gray"
+                textColor="darkGray"
+                size="sm"
+              />
+            </Box>
+            <Box marginTop={2}>
+              <Button
+                onClick={() => {
+                  console.log("Open Modal for Questions");
+                }}
+                text="Add Question"
                 color="gray"
                 textColor="darkGray"
                 size="sm"
@@ -160,4 +180,3 @@ export default function CreateSession() {
     </div>
   );
 }
-

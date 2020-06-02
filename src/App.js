@@ -34,11 +34,11 @@ function App() {
         />
 
         {currentPage === 0 ? (
-          <AboutPage />
+          <CreateSession />
         ) : currentPage === 1 ? (
           <QuestionsPage />
         ) : currentPage === 2 ? (
-          <CreateSession />
+          <AboutPage />
         ) : currentPage === 3 ? (
           <OptionsPage />
         ) : currentPage === 4 ? (
