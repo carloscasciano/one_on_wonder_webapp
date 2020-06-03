@@ -1,30 +1,24 @@
-import React, { useState } from "react";
-import { Box, Text, Heading, RadioButton, Button, Toast, Badge } from "gestalt";
+import React  from "react";
+import { Box, Text, Heading, RadioButton, Badge } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import { textData } from "../assets/code_logic/getLanguageTexts";
+import { getLanguageTexts } from "../assets/code_logic/getLanguageTexts";
 
-/* TEST */
-import {getLanguageTexts} from "../assets/code_logic/getLanguageTexts"
-
-
- let optionsPageText = textData.optionsPageText;
+let optionsPageText = textData.optionsPageText;
 
 export default function OptionsPage(props) {
-  optionsPageText = props.currentLanguage.optionsPageText
-  const [toastVisibility, setToastVisibility] = useState(false);
+  optionsPageText = props.currentLanguage.optionsPageText;
+  /* const [toastVisibility, setToastVisibility] = useState(false);
   const handleToastVisibility = () => {
     setToastVisibility(true);
     setTimeout(function () {
       setToastVisibility(false);
     }, 2000);
-  };
+  }; */
 
   return (
     <div>
       <Box padding={3}>
-        <button onClick={()=>props.setCurrentLanguage(getLanguageTexts('ptbr'))}>PORTUGUES</button>
-        <button onClick={()=>props.setCurrentLanguage(getLanguageTexts('enus'))}>INGLES</button>
-        <button onClick={()=>console.log("LINGUA: ", props.currentLanguage)}>QUAL LINGUA?</button>
         <Box>
           <Heading size="sm">{optionsPageText[0].mainText}</Heading>
           <Box marginTop={3} paddingX={3}>
@@ -32,10 +26,12 @@ export default function OptionsPage(props) {
             <Box marginTop={1} paddingX={3}>
               <RadioButton
                 id="enus"
-                onChange={() => {}}
+                onChange={() =>
+                  props.setCurrentLanguage(getLanguageTexts("enus"))
+                }
                 value="enus"
-                checked
                 label="English"
+                checked={props.currentLanguage === getLanguageTexts("enus")}
               />
             </Box>
             <Box
@@ -47,14 +43,13 @@ export default function OptionsPage(props) {
             >
               <RadioButton
                 id="ptbr"
-                onChange={() => {}}
+                onChange={() =>
+                  props.setCurrentLanguage(getLanguageTexts("ptbr"))
+                }
                 value="ptbr"
-                disabled
                 label={`Português`}
+                checked={props.currentLanguage === getLanguageTexts("ptbr")}
               />
-              <Box marginLeft={3}>
-                <Badge text="Soon!" />
-              </Box>
             </Box>
             <Box
               marginTop={1}
@@ -86,7 +81,7 @@ export default function OptionsPage(props) {
                 onChange={() => {}}
                 value="fr"
                 disabled
-                label={`Française`}
+                label={`Français`}
               />
               <Box marginLeft={3}>
                 <Badge text="Soon!" />
@@ -111,7 +106,7 @@ export default function OptionsPage(props) {
               </Box>
             </Box>
           </Box>
-          <Box marginTop={4}>
+          {/* <Box marginTop={4}>
             <Button
               disabled
               inline
@@ -128,7 +123,7 @@ export default function OptionsPage(props) {
             <Box padding={5}>
               <Toast text={<>{optionsPageText[0].toastSaveText}</>} />
             </Box>
-          )}
+          )} */}
         </Box>
       </Box>
     </div>
