@@ -3,7 +3,7 @@ export const headerText = [
     about: "Sobre",
     questions: "Perguntas",
     session: "1-1",
-    options: "Opções",
+    options: "Idiomas",
   },
 ];
 
@@ -74,9 +74,11 @@ export const createSessionPageText = [
 
 export const optionsPageText = [
   {
-    mainText: "Opções",
-    languageMenuText: "Idiomas:",
+    mainText: "Idiomas",
+    languageMenuText: "",
     saveButtom: "Salvar",
     toastSaveText: "Salvo!",
+    badgeText: "One on Wonder usa o idioma do seu browser como padrão.",
+    soonText: "Em Breve!"
   },
 ];

@@ -70,7 +70,7 @@ export default function OptionsPage(props) {
                 label={`Italiano`}
               />
               <Box marginLeft={3}>
-                <Badge text="Soon!" />
+                <Badge text={optionsPageText[0].soonText} />
               </Box>
             </Box>
             <Box
@@ -88,7 +88,7 @@ export default function OptionsPage(props) {
                 label={`Français`}
               />
               <Box marginLeft={3}>
-                <Badge text="Soon!" />
+                <Badge text={optionsPageText[0].soonText} />
               </Box>
             </Box>
             <Box
@@ -106,7 +106,7 @@ export default function OptionsPage(props) {
                 label={`Español`}
               />
               <Box marginLeft={3}>
-                <Badge text="Soon!" />
+                <Badge text={optionsPageText[0].soonText} />
               </Box>
             </Box>
           </Box>
@@ -128,6 +128,9 @@ export default function OptionsPage(props) {
               <Toast text={<>{optionsPageText[0].toastSaveText}</>} />
             </Box>
           )} */}
+        </Box>
+        <Box marginLeft={3} marginTop={6}>
+          <Badge text={optionsPageText[0].badgeText} />
         </Box>
       </Box>
     </div>
