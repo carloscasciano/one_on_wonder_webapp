@@ -44,9 +44,9 @@ export const iceBreakersPageText = [
 export const createSessionPageText = [
   {
     mainText: "Use this area to create a session with anyone.",
-    memberLabel: "Who are you talking to?",
-    dateLabel: "When?",
-    feelingLabel: "How is your team member feeling?",
+    memberLabel: "* Who are you talking to?",
+    dateLabel: "* When?",
+    feelingLabel: "* How is your team member feeling?",
     feelingPlaceholder: "Choose a dominant feeling",
     notesLabel:
       "Use this field to add comments, next steps or whatever you feel is important.",

@@ -19,7 +19,7 @@ let createSessionPageText = textData.createSessionPageText;
 const feelingOptions = DUMMY_FEELINGS;
 
 export default function CreateSession(props) {
-  createSessionPageText = props.currentLanguage.createSessionPageText
+  createSessionPageText = props.currentLanguage.createSessionPageText;
   const [teamMemberName, setTeamMemberName] = useState("");
   const [sessionDate, setSessionDate] = useState("");
   const [currentFeeling, setCurrentFeeling] = useState("");
@@ -92,7 +92,7 @@ export default function CreateSession(props) {
               id="date"
               onChange={({ value }) => setSessionDate(value)}
               placeholder="01/01/2020"
-              label={createSessionPageText[0].memberLabel}
+              label={createSessionPageText[0].dateLabel}
               value={sessionDate}
               type="date"
             />
@@ -109,35 +109,43 @@ export default function CreateSession(props) {
               value={currentFeeling}
             />
           </Box>
-
-          <Box marginTop={8} marginBottom={8}>
-            <TextField
-              id="notes"
-              onChange={({ value }) => setUserSingleNote(value)}
-              placeholder={createSessionPageText[0].notesPlaceholder}
-              label={createSessionPageText[0].notesLabel}
-              value={userSingleNote}
-              type="text"
-            />
-            <Box marginTop={2}>
-              <Button
-                onClick={
-                  userSingleNote !== ""
-                    ? () => {
-                        setSessionNotes(sessionNotes.concat(userSingleNote));
-                        setUserSingleNote("");
-                      }
-                    : null
-                }
-                text={createSessionPageText[0].addNoteButtomText}
-                color="gray"
-                textColor="darkGray"
-                size="sm"
-              />
-            </Box>
-          </Box>
         </Box>
-        <Divider />
+
+        {teamMemberName !== "" &&
+        sessionDate !== "" &&
+        currentFeeling !== "" ? (
+          <>
+            <Box maxWidth="480px" marginTop={8} marginBottom={8}>
+              <TextField
+                inline
+                id="notes"
+                onChange={({ value }) => setUserSingleNote(value)}
+                placeholder={createSessionPageText[0].notesPlaceholder}
+                label={createSessionPageText[0].notesLabel}
+                value={userSingleNote}
+                type="text"
+              />
+              <Box marginTop={2}>
+                <Button
+                  inline
+                  onClick={
+                    userSingleNote !== ""
+                      ? () => {
+                          setSessionNotes(sessionNotes.concat(userSingleNote));
+                          setUserSingleNote("");
+                        }
+                      : null
+                  }
+                  text={createSessionPageText[0].addNoteButtomText}
+                  color="gray"
+                  textColor="darkGray"
+                  size="sm"
+                />
+              </Box>
+            </Box>
+            <Divider />
+          </>
+        ) : null}
 
         <Box marginTop={3}>
           <Box
