@@ -9,13 +9,18 @@ export const headerText = [
 
 export const aboutPageText = [
   {
-    mainQuestion: "Porque os membros do seu time estão saindo...",
-    subQuestion: "...e o que você pode fazer sobre isso?",
+    mainQuestion:
+      "Boas relações no trabalho resultam em mais felicidade e qualidade nas entregas...",
+    subQuestion: "...mas, você e seu time estão construindo estes relacionamentos?",
     mainText01:
-      "Studies shows that people are leaving their offices because of ",
+      "Como gestor, inúmeras vezes vi bons projetos serem destruídos por má comunicação, péssima convivência e ego.",
+    mainText02:
+      "Tambem experenciei como as conversas de 1-1 e a investigação sobre o sentimento do seu time eram excelentes para criar um bom ambiente de trabalho. Foi por isso que o One on Wonder nasceu.",
+    mainText03:
+      "Esta ferramenta possui ~150 perguntas separadas em categorias que você pode usar para conversar com seu time. Além disso, você pode construir uma sessão de 1-1 com qualquer pessoa, configurar o sentimento do momento e fazer algumas anotações. São simples ferramentas que podem ajudar a alcançar um lugar mais saudável para trabalhar e viver.",
     contactInfo:
-      "You can contact this open source project on : POAKSPOAKSPOAKS",
-    specialThanks: "Here comes the thanks",
+      "Se você deseja colaborar de alguma maneira, fazer alguma sugestão ou dar feedback, pode entrar em contato pelo carlos.casciano@gmail.com ou qualquer rede social que estou. Ajudarei com o maior prazer.",
+    specialThanks: "Muito Obrigado!",
   },
 ];
 
@@ -44,7 +49,7 @@ export const iceBreakersPageText = [
 export const createSessionPageText = [
   {
     mainText:
-      "Use esta área para criar uma sessão de conversa com qualquer um.",
+      "Use esta área para criar uma sessão de conversa com quem quiser.",
     memberLabel: "* Com quem você vai falar?",
     dateLabel: "* Quando?",
     feelingLabel: "* Como seu colega se sente:",

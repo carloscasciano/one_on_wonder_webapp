@@ -9,13 +9,18 @@ export const headerText = [
 
 export const aboutPageText = [
   {
-    mainQuestion: "Why are your team members leaving...",
-    subQuestion: "... and what can you do about it?",
+    mainQuestion:
+      "Good relationships at work results in happiness and more quality on deliveries...",
+    subQuestion: "...but, are you and your team building these relations?",
     mainText01:
-      "Studies shows that people are leaving their offices because of ",
+      "As a manager, countless times I've seen good projects and teams being destroyed by miscommunication, terrible coexistence and ego.",
+    mainText02:
+      "I also experienced how 1-1 meetings and exploring your team feelings were great to build a good work environment. This is why One on Wonder was born. ",
+    mainText03:
+      "This tool has ~150 questions separated by categories that you can use to talk to your team members. Also, there is an area where you can build an 1-1 session with anyone you like, set overall feeling and make some notes. These are simple tools that can help you achieve a healthier place to work and live.",
     contactInfo:
-      "You can contact this open source project on : POAKSPOAKSPOAKS",
-    specialThanks: "Here comes the thanks",
+      "If you want to colaborate somehow, suggest anything or just give some feedback, please contact me on carlos.casciano@gmail.com or any other social media I'm in. I'll be glad to help.",
+    specialThanks: "Thank you very much!",
   },
 ];
 
@@ -71,6 +76,6 @@ export const optionsPageText = [
     mainText: "Options",
     languageMenuText: "Languages:",
     saveButtom: "Save",
-    toastSaveText: "Saved!"
-  }
-]
+    toastSaveText: "Saved!",
+  },
+];

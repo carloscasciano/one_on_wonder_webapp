@@ -25,6 +25,16 @@ export default function AboutPage(props) {
         </Box>
         <Box marginTop={5}>
           <Text size="lg" margin>
+            {aboutPageText[0].mainText02}
+          </Text>
+        </Box>
+        <Box marginTop={5}>
+          <Text size="lg" margin>
+            {aboutPageText[0].mainText03}
+          </Text>
+        </Box>
+        <Box marginTop={5}>
+          <Text size="lg" margin>
             {aboutPageText[0].contactInfo}
           </Text>
         </Box>
