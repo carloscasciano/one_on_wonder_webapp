@@ -18,12 +18,16 @@ export default function QuestionsPage(props) {
   const [randomQuestion, setRandomQuestion] = useState("");
 
   useEffect(() => {
+    let isMounted = true;
     const questionsData = getRawQuestionsData();
     questionsData.then(function (value) {
-      const qData = [...value];
-      setQuestions(qData);
-      return qData;
+      if(isMounted === true) {
+        const qData = [...value];
+        setQuestions(qData);
+        return qData;
+      }
     });
+    return () => isMounted = false;
   }, []);
 
   const currentDifferentCategories = getCategories(questions, "category");
