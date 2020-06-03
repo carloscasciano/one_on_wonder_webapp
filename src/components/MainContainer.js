@@ -15,7 +15,7 @@ export default function MainContainer(props) {
         </Heading>
       </Box>
 
-      <Box paddingX={6} paddingY={1}>
+      <Box paddingX={2} paddingY={1}>
         <Tabs
           tabs={[
             {

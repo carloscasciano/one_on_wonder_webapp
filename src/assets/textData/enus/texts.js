@@ -2,7 +2,7 @@ export const headerText = [
   {
     about: "About",
     questions: "Questions",
-    session: "One on One",
+    session: "1-1",
     options: "Options",
   },
 ];
