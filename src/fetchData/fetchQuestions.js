@@ -1,9 +1,9 @@
 const axios = require("axios");
 
-async function axiosGetRawQuestionsData() {
+async function axiosGetRawQuestionsData(language) {
   try {
     const response = await axios.get(
-      `http://young-wildwood-47504.herokuapp.com/enus/questions.json`
+      `http://young-wildwood-47504.herokuapp.com/${language}/questions.json`
     )
     return response.data
   } catch (error) {
@@ -11,8 +11,8 @@ async function axiosGetRawQuestionsData() {
   }
 }
 
-async function getRawQuestionsData() {
-  let questionsData = await axiosGetRawQuestionsData()
+async function getRawQuestionsData(language) {
+  let questionsData = await axiosGetRawQuestionsData(language)
   return questionsData
 }
 

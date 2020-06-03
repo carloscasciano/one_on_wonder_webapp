@@ -19,7 +19,7 @@ export default function QuestionsPage(props) {
 
   useEffect(() => {
     let isMounted = true;
-    const questionsData = getRawQuestionsData();
+    const questionsData = getRawQuestionsData(props.currentLanguageCode);
     questionsData.then(function (value) {
       if(isMounted === true) {
         const qData = [...value];
@@ -28,7 +28,7 @@ export default function QuestionsPage(props) {
       }
     });
     return () => isMounted = false;
-  }, []);
+  }, [props.currentLanguageCode]);
 
   const currentDifferentCategories = getCategories(questions, "category");
   const categoriesBuilt = buildCategoryForSelectList(

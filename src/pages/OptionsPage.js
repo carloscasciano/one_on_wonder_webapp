@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import { Box, Text, Heading, RadioButton, Badge } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import { textData } from "../assets/code_logic/getLanguageTexts";
@@ -8,13 +8,15 @@ let optionsPageText = textData.optionsPageText;
 
 export default function OptionsPage(props) {
   optionsPageText = props.currentLanguage.optionsPageText;
-  /* const [toastVisibility, setToastVisibility] = useState(false);
+  /* 
+  const [toastVisibility, setToastVisibility] = useState(false);
   const handleToastVisibility = () => {
     setToastVisibility(true);
     setTimeout(function () {
       setToastVisibility(false);
     }, 2000);
-  }; */
+  }; 
+  */
 
   return (
     <div>
@@ -26,9 +28,10 @@ export default function OptionsPage(props) {
             <Box marginTop={1} paddingX={3}>
               <RadioButton
                 id="enus"
-                onChange={() =>
-                  props.setCurrentLanguage(getLanguageTexts("enus"))
-                }
+                onChange={() => {
+                  props.setCurrentLanguage(getLanguageTexts("enus"));
+                  props.setCurrentLanguageCode("enus");
+                }}
                 value="enus"
                 label="English"
                 checked={props.currentLanguage === getLanguageTexts("enus")}
@@ -43,9 +46,10 @@ export default function OptionsPage(props) {
             >
               <RadioButton
                 id="ptbr"
-                onChange={() =>
-                  props.setCurrentLanguage(getLanguageTexts("ptbr"))
-                }
+                onChange={() => {
+                  props.setCurrentLanguage(getLanguageTexts("ptbr"));
+                  props.setCurrentLanguageCode("ptbr");
+                }}
                 value="ptbr"
                 label={`Português`}
                 checked={props.currentLanguage === getLanguageTexts("ptbr")}

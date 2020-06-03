@@ -5,11 +5,14 @@ import QuestionsPage from "./pages/QuestionsPage";
 import IceBreakers from "./pages/IceBreakers";
 import CreateSession from "./pages/CreateSession";
 import OptionsPage from "./pages/OptionsPage";
-import * as ENUS from "./assets/textData/enus/texts";
+import {getUserBrowserLanguage} from "./assets/code_logic/getUserBrowserLanguage"
+import {getUserLanguagePack} from "./assets/code_logic/getUserLanguagePack"
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
-  const [currentLanguage, setCurrentLanguage] = useState(ENUS);
+  const [currentLanguage, setCurrentLanguage] = useState(getUserLanguagePack);
+  const [currentLanguageCode, setCurrentLanguageCode] = useState(getUserBrowserLanguage());
   const handlePageChange = ({ activeTabIndex, event }) => {
     setCurrentPage(activeTabIndex);
   };
@@ -39,13 +42,17 @@ function App() {
         {currentPage === 0 ? (
           <AboutPage currentLanguage={currentLanguage} />
         ) : currentPage === 1 ? (
-          <QuestionsPage currentLanguage={currentLanguage} />
+          <QuestionsPage
+            currentLanguage={currentLanguage}
+            currentLanguageCode={currentLanguageCode}
+          />
         ) : currentPage === 2 ? (
           <CreateSession currentLanguage={currentLanguage} />
         ) : currentPage === 3 ? (
           <OptionsPage
             currentLanguage={currentLanguage}
             setCurrentLanguage={setCurrentLanguage}
+            setCurrentLanguageCode={setCurrentLanguageCode}
           />
         ) : currentPage === 4 ? (
           <IceBreakers />

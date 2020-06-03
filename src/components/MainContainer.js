@@ -6,7 +6,7 @@ import { textData } from "../assets/code_logic/getLanguageTexts";
 let headerText = textData.headerText;
 
 export default function MainContainer(props) {
-  headerText = props.currentLanguage.headerText
+  headerText = props.currentLanguage.headerText;
   return (
     <>
       <Box padding={2} color="darkGray" display="flex" justifyContent="between">
