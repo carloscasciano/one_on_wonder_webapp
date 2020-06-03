@@ -56,7 +56,7 @@ export default function QuestionsPage(props) {
           .filter((elem) => elem.category === currentCategory)
           .map((elem) => (
             <div key={elem.id}>
-              <Box paddingX={6} marginTop={6} marginBottom={2}>
+              <Box paddingX={2} marginTop={6} marginBottom={2}>
                 <Text>
                   #{elem.id} - {elem.question}
                 </Text>
