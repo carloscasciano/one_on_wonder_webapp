@@ -59,15 +59,16 @@ function App() {
         {currentPage === 0 ? (
           <AboutPage currentLanguage={currentLanguage} />
         ) : currentPage === 1 ? (
-          <QuestionsPage
-            currentLanguage={currentLanguage}
-            questions={questions}
-          />
-        ) : currentPage === 2 ? (
           <CreateSession
             currentLanguage={currentLanguage}
             questions={questions}
           />
+        ) : currentPage === 2 ? (
+          <QuestionsPage
+            currentLanguage={currentLanguage}
+            questions={questions}
+          />
+          
         ) : currentPage === 3 ? (
           (<OptionsPage
             currentLanguage={currentLanguage}
