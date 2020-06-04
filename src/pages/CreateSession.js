@@ -11,15 +11,15 @@ import {
   Badge,
 } from "gestalt";
 import "gestalt/dist/gestalt.css";
-import DUMMY_FEELINGS from "../DUMMY_DATA/DUMMY_FEELINGS";
+/* import DUMMY_FEELINGS from "../DUMMY_DATA/DUMMY_FEELINGS"; */
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { textData } from "../assets/code_logic/getLanguageTexts";
 
 let createSessionPageText = textData.createSessionPageText;
-const feelingOptions = DUMMY_FEELINGS;
 
 export default function CreateSession(props) {
   createSessionPageText = props.currentLanguage.createSessionPageText;
+  const feelingOptions = createSessionPageText[0].feelingsEmojis;
   const [teamMemberName, setTeamMemberName] = useState("");
   const [sessionDate, setSessionDate] = useState("");
   const [currentFeeling, setCurrentFeeling] = useState("");

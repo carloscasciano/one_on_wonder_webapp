@@ -69,7 +69,45 @@ export const createSessionPageText = [
         preNotesText: "Minhas anotações: ",
       },
     ],
-  },
+    feelingsEmojis: [
+      {
+        value: "happy",
+        label: "😀 Feliz",
+      },
+      {
+        value: "loving",
+        label: "😍 Amando",
+      },
+      {
+        value: "fun",
+        label: "😂 Divertido",
+      },
+      {
+        value: "neutral",
+        label: `😑 Neutro`,
+      },
+      {
+        value: "hurt",
+        label: `🤕 Machucado`,
+      },
+      {
+        value: "overwhelmed",
+        label: `🥵 Sobrecarregado`,
+      },
+      {
+        value: "sad",
+        label: `🙁 Triste`,
+      },
+      {
+        value: "anxious",
+        label: `😰 Ansioso`,
+      },
+      {
+        value: "angry",
+        label: `😡 Raiva`,
+      },
+    ]
+  }
 ];
 
 export const optionsPageText = [
@@ -82,3 +120,4 @@ export const optionsPageText = [
     soonText: "Em Breve!"
   },
 ];
+
