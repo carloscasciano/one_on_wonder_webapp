@@ -53,8 +53,8 @@ export const createSessionPageText = [
     mainText:
       "Use esta área para criar uma sessão de conversa com quem quiser.",
     memberLabel: "* Com quem você vai falar?",
-    dateLabel: "* Quando?",
-    feelingLabel: "* Como seu colega se sente:",
+    dateLabel: "Quando?",
+    feelingLabel: "Como seu colega se sente:",
     feelingPlaceholder: "Escolha um sentimento dominante",
     modalButtomText: "Quer adicionar Perguntas neste 1-1?",
     notesLabel:

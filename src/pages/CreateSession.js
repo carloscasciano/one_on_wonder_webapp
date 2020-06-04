@@ -9,6 +9,7 @@ import {
   SelectList,
   Toast,
   Badge,
+  TextArea,
 } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import AddQuestionModal from "../components/AddQuestionModal";
@@ -35,17 +36,24 @@ export default function CreateSession(props) {
 
   const summaryText = (
     <>
-      <Text size="lg">
-        {createSessionPageText[0].summaryText[0].preDateText} {sessionDate},
-      </Text>
+      {sessionDate !== "" ? (
+        <Text size="lg">
+          {createSessionPageText[0].summaryText[0].preDateText} {sessionDate},
+        </Text>
+      ) : null}
+
       <Text size="lg">
         {createSessionPageText[0].summaryText[0].preTeamMemberText}{" "}
         {teamMemberName}.
       </Text>
-      <Text size="lg">
-        {createSessionPageText[0].summaryText[0].preFeelingText} '
-        {currentFeeling}'.
-      </Text>
+
+      {currentFeeling !== "" ? (
+        <Text size="lg">
+          {createSessionPageText[0].summaryText[0].preFeelingText} '
+          {currentFeeling}'.
+        </Text>
+      ) : null}
+
       <Box marginTop={3}>
         <Text size="lg">
           {createSessionPageText[0].summaryText[0].preSuggestedQuestions}
@@ -56,6 +64,7 @@ export default function CreateSession(props) {
           </Text>
         ))}{" "}
       </Box>
+
       <Box marginTop={3}>
         <Text size="lg">
           {createSessionPageText[0].summaryText[0].preNotesText}
@@ -79,9 +88,9 @@ export default function CreateSession(props) {
   } \n${sessionSuggestedQuestions
     .map((question) => " - " + question + "\n")
     .join("")} 
-  ${
-    createSessionPageText[0].summaryText[0].preNotesText
-  } \n${sessionNotes.map((note) => " - " + note + "\n").join("")}  `;
+  ${createSessionPageText[0].summaryText[0].preNotesText} \n${sessionNotes
+    .map((note) => " - " + note + "\n")
+    .join("")}  `;
 
   const handleToastVisibility = () => {
     setToastVisibility(true);
@@ -143,9 +152,7 @@ export default function CreateSession(props) {
             </Box>
           </Box>
 
-          {teamMemberName !== "" &&
-          sessionDate !== "" &&
-          currentFeeling !== "" ? (
+          {teamMemberName !== "" ? (
             <>
               <Divider />
 
@@ -160,7 +167,7 @@ export default function CreateSession(props) {
                 />
               </Box>
               <Box maxWidth="480px" marginTop={4} marginBottom={4}>
-                <TextField
+                <TextArea
                   inline
                   id="notes"
                   onChange={({ value }) => setUserSingleNote(value)}
@@ -203,9 +210,7 @@ export default function CreateSession(props) {
               <Heading size="sm">{createSessionPageText[0].summary}</Heading>
             </Box>
             <Box marginTop={4}>
-              {teamMemberName !== "" &&
-              sessionDate !== "" &&
-              currentFeeling !== "" ? (
+              {teamMemberName !== "" ? (
                 <>
                   <Text size="lg">{summaryText}</Text>
                   <Box marginTop={3}>
@@ -257,5 +262,3 @@ export default function CreateSession(props) {
     </div>
   );
 }
-
-  

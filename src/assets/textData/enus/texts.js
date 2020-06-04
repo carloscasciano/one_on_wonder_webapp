@@ -51,8 +51,8 @@ export const createSessionPageText = [
   {
     mainText: "Use this area to create a session with anyone.",
     memberLabel: "* Who are you talking to?",
-    dateLabel: "* When?",
-    feelingLabel: "* How is your team member feeling?",
+    dateLabel: "When?",
+    feelingLabel: "How is your team member feeling?",
     feelingPlaceholder: "Choose a dominant feeling",
     modalButtomText: "Want to add Questions to this 1-1?",
     notesLabel:
