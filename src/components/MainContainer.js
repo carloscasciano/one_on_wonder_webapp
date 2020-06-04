@@ -23,13 +23,14 @@ export default function MainContainer(props) {
               href: "#",
             },
             {
-              text: headerText[0].questions,
-              href: "#",
-            },
-            {
               text: headerText[0].session,
               href: "#",
             },
+            {
+              text: headerText[0].questions,
+              href: "#",
+            },
+            
             {
               text: headerText[0].options,
               href: "#",

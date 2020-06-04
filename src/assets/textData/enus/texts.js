@@ -1,7 +1,7 @@
 export const headerText = [
   {
     about: "About",
-    questions: "Questions",
+    questions: "To Inspire",
     session: "1-1",
     options: "Languages",
   },
