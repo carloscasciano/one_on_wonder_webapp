@@ -56,12 +56,13 @@ function App() {
         />
 
         {currentPage === 0 ? (
-          <AboutPage currentLanguage={currentLanguage} />
-        ) : currentPage === 1 ? (
           <QuestionsPage
-            currentLanguage={currentLanguage}
-            questions={questions}
-          />
+          currentLanguage={currentLanguage}
+          questions={questions}
+        />
+          
+        ) : currentPage === 1 ? (
+          <AboutPage currentLanguage={currentLanguage} />
         ) : currentPage === 2 ? (
           <CreateSession currentLanguage={currentLanguage} />
         ) : currentPage === 3 ? (
