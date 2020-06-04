@@ -31,6 +31,7 @@ export const questionsPageText = [
     categoryLabel: "Category",
     categoryBox: "Select Here",
     randomButton: "Give me a quick random question",
+    suggestCategoryButton: "Suggest me one question from this Category"
   },
 ];
 

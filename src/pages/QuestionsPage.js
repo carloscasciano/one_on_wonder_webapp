@@ -10,9 +10,7 @@ export default function QuestionsPage(props) {
   const questionsPageText = props.currentLanguage.questionsPageText;
   const [currentCategory, setCurrentCategory] = useState();
   const [randomQuestion, setRandomQuestion] = useState("");
-  const [randomCategoryQuestion, setRandomCategoryQuestion] = useState(
-    "asdasd"
-  );
+  const [randomCategoryQuestion, setRandomCategoryQuestion] = useState("");
   const [
     randomCategoryQuestionVisibility,
     setRandomCategoryQuestionVisibility,
@@ -34,7 +32,8 @@ export default function QuestionsPage(props) {
             onChange={({ value }) => {
               setRandomCategoryQuestionVisibility(true);
               setCurrentCategory(value);
-              setCategoryListVisibility(false);
+              setCategoryListVisibility(true);
+              setRandomCategoryQuestion("");
             }}
             options={categoriesBuilt}
             placeholder={questionsPageText[0].categoryBox}
@@ -42,13 +41,77 @@ export default function QuestionsPage(props) {
             value={currentCategory}
           />
         </Box>
+      </Box>
+      <Box
+        display="inlineBlock"
+        justifyContent="around"
+        alignItems="start"
+        paddingX={4}
+        marginBottom={3}
+      >
+        <Box>
+          {randomCategoryQuestionVisibility === true ? (
+            <Box>
+              <Box display="flex">
+                <Box marginBottom={4}>
+                  <Button
+                    text={questionsPageText[0].suggestCategoryButton}
+                    size="sm"
+                    inline
+                    onClick={() => {
+                      setRandomCategoryQuestion(
+                        props.questions.filter(
+                          (elem) => elem.category === currentCategory
+                        )[
+                          Math.floor(
+                            Math.random() *
+                              props.questions.filter(
+                                (elem) => elem.category === currentCategory
+                              ).length
+                          )
+                        ].question
+                      );
+                      setCategoryListVisibility(false);
+                    }}
+                  />
+                </Box>
+              </Box>
+              <Box marginLeft={1}>
+                <Text>{randomCategoryQuestion}</Text>
+              </Box>
+            </Box>
+          ) : (
+            <Box display="inlineBlock" width="100%" justifyContent="center">
+              <Box marginBottom={5}>
+                <Button
+                  text={questionsPageText[0].randomButton}
+                  size="sm"
+                  inline
+                  onClick={() => {
+                    let rand = Math.floor(
+                      Math.random() * props.questions.length
+                    );
+                    setRandomQuestion(rand);
+                  }}
+                />
+              </Box>
+              <Box marginRight={2}>
+                {randomQuestion === "" ? null : (
+                  <Text size="lg">
+                    {props.questions[randomQuestion]["question"]}
+                  </Text>
+                )}
+              </Box>
+            </Box>
+          )}
+        </Box>
         {categoryListVisibility === true ? (
           <Box margin={2}>
             {props.questions
               .filter((elem) => elem.category === currentCategory)
               .map((elem) => (
                 <div key={elem.id}>
-                  <Box paddingX={2} marginTop={6} marginBottom={2}>
+                  <Box marginTop={6} marginBottom={2}>
                     <Text>
                       #{elem.id} - {elem.question}
                     </Text>
@@ -57,74 +120,6 @@ export default function QuestionsPage(props) {
               ))}
           </Box>
         ) : null}
-      </Box>
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        marginBottom={3}
-      >
-        {randomCategoryQuestionVisibility === true ? (
-          <>
-            <Box>
-              <Button
-                text="Random Question from this Category"
-                size="sm"
-                inline
-                onClick={() => {
-                  setRandomCategoryQuestion(
-                    props.questions.filter(
-                      (elem) => elem.category === currentCategory
-                    )[
-                      Math.floor(Math.random()*(props.questions.filter(
-                        (elem) => elem.category === currentCategory
-                      ).length))
-                    ].question
-                  );
-                }}
-              />
-              <Button
-                text="See Full List"
-                size="sm"
-                inline
-                onClick={() => {
-                  setCategoryListVisibility(true);
-                  setRandomCategoryQuestionVisibility(false);
-                }}
-              />
-              <Text>{randomCategoryQuestion}</Text>
-            </Box>
-          </>
-        ) : (
-          <>
-            <Box>
-              <Button
-                text={questionsPageText[0].randomButton}
-                size="sm"
-                inline
-                onClick={() => {
-                  let rand = Math.floor(Math.random() * props.questions.length);
-                  setRandomQuestion(rand);
-                }}
-              />
-              {randomQuestion === "" ? null : (
-                <>
-                  <Box
-                    marginTop={5}
-                    marginBottom={2}
-                    paddingX={12}
-                    display="flex"
-                    justifyContent="center"
-                  >
-                    <Text size="lg" weight="bold">
-                      {props.questions[randomQuestion]["question"]}
-                    </Text>
-                  </Box>
-                </>
-              )}
-            </Box>
-          </>
-        )}
       </Box>
     </div>
   );
