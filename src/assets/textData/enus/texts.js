@@ -60,7 +60,7 @@ export const createSessionPageText = [
     notesPlaceholder: "Eric is glad his mother came for his graduation.",
     addNoteButtomText: "Add Note",
     summary: "Summary",
-    summaryBadge: "Add a team member, a date and feeling.",
+    summaryBadge: "Add a team member to open Summary.",
     copyToClipButton: "Copy to Clipboard",
     toastText: "Go CTRL+V anywhere!",
     summaryText: [
