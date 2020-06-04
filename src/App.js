@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainContainer from "./components/MainContainer";
 import AboutPage from "./pages/AboutPage";
 import QuestionsPage from "./pages/QuestionsPage";
@@ -7,12 +7,28 @@ import CreateSession from "./pages/CreateSession";
 import OptionsPage from "./pages/OptionsPage";
 import {getUserBrowserLanguage} from "./assets/code_logic/getUserBrowserLanguage"
 import {getUserLanguagePack} from "./assets/code_logic/getUserLanguagePack"
+import { getRawQuestionsData } from "./fetchData/fetchQuestions"
 
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
   const [currentLanguage, setCurrentLanguage] = useState(getUserLanguagePack);
   const [currentLanguageCode, setCurrentLanguageCode] = useState(getUserBrowserLanguage());
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    let isMounted = true;
+    const questionsData = getRawQuestionsData(currentLanguageCode);
+    questionsData.then(function (value) {
+      if(isMounted === true) {
+        const qData = [...value];
+        setQuestions(qData);
+        return qData;
+      }
+    });
+    return () => isMounted = false;
+  }, [currentLanguageCode]);
+
   const handlePageChange = ({ activeTabIndex, event }) => {
     setCurrentPage(activeTabIndex);
   };
@@ -44,7 +60,7 @@ function App() {
         ) : currentPage === 1 ? (
           <QuestionsPage
             currentLanguage={currentLanguage}
-            currentLanguageCode={currentLanguageCode}
+            questions={questions}
           />
         ) : currentPage === 2 ? (
           <CreateSession currentLanguage={currentLanguage} />

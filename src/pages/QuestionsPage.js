@@ -1,36 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, Text, Button, SelectList, Heading } from "gestalt";
 import "gestalt/dist/gestalt.css";
 import {
   getCategories,
   buildCategoryForSelectList,
 } from "../assets/code_logic/getCategories";
-/* import { baseQuestionsEN } from "../DUMMY_DATA/DUMMY_QUESTIONS"; */
-import { getRawQuestionsData } from "../fetchData/fetchQuestions";
-import { textData } from "../assets/code_logic/getLanguageTexts";
-
-let questionsPageText = textData.questionsPageText;
 
 export default function QuestionsPage(props) {
-  questionsPageText = props.currentLanguage.questionsPageText
-  const [questions, setQuestions] = useState([]);
+  const questionsPageText = props.currentLanguage.questionsPageText;
   const [currentCategory, setCurrentCategory] = useState();
   const [randomQuestion, setRandomQuestion] = useState("");
-
-  useEffect(() => {
-    let isMounted = true;
-    const questionsData = getRawQuestionsData(props.currentLanguageCode);
-    questionsData.then(function (value) {
-      if(isMounted === true) {
-        const qData = [...value];
-        setQuestions(qData);
-        return qData;
-      }
-    });
-    return () => isMounted = false;
-  }, [props.currentLanguageCode]);
-
-  const currentDifferentCategories = getCategories(questions, "category");
+  const currentDifferentCategories = getCategories(props.questions, "category");
   const categoriesBuilt = buildCategoryForSelectList(
     currentDifferentCategories
   );
@@ -52,7 +32,7 @@ export default function QuestionsPage(props) {
         </Box>
 
         <Box margin={2}></Box>
-        {questions
+        {props.questions
           .filter((elem) => elem.category === currentCategory)
           .map((elem) => (
             <div key={elem.id}>
@@ -75,7 +55,7 @@ export default function QuestionsPage(props) {
           size="sm"
           inline
           onClick={() => {
-            let rand = Math.floor(Math.random() * questions.length);
+            let rand = Math.floor(Math.random() * props.questions.length);
             setRandomQuestion(rand);
           }}
         />
@@ -90,7 +70,7 @@ export default function QuestionsPage(props) {
             justifyContent="center"
           >
             <Text size="lg" weight="bold">
-              {questions[randomQuestion]["question"]}
+              {props.questions[randomQuestion]["question"]}
             </Text>
           </Box>
         </>
