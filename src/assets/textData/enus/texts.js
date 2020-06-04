@@ -11,7 +11,7 @@ export const aboutPageText = [
   {
     mainQuestion:
       "Good relationships at work results in happiness and more quality on deliveries...",
-    subQuestion: "...but, are you and your team building these relations?",
+    subQuestion: "...but are you and your team building these relations?",
     mainText01:
       "As a manager, countless times I've seen good projects and teams being destroyed by miscommunication, terrible coexistence and ego.",
     mainText02:

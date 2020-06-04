@@ -12,7 +12,7 @@ export const aboutPageText = [
     mainQuestion:
       "Boas relações no trabalho resultam em mais felicidade e qualidade nas entregas...",
     subQuestion:
-      "...mas, você e seu time estão construindo estes relacionamentos?",
+      "...mas você e seu time estão construindo estes relacionamentos?",
     mainText01:
       "Como gestor, inúmeras vezes vi bons projetos serem destruídos por má comunicação, péssima convivência e ego.",
     mainText02:
