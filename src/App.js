@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainContainer from "./components/MainContainer";
 import AboutPage from "./pages/AboutPage";
 import QuestionsPage from "./pages/QuestionsPage";
-import IceBreakers from "./pages/IceBreakers";
+/* import IceBreakers from "./pages/IceBreakers"; */
 import CreateSession from "./pages/CreateSession";
 import OptionsPage from "./pages/OptionsPage";
 import { getUserBrowserLanguage } from "./assets/code_logic/getUserBrowserLanguage";
@@ -64,15 +64,20 @@ function App() {
             questions={questions}
           />
         ) : currentPage === 2 ? (
-          <CreateSession currentLanguage={currentLanguage} />
+          <CreateSession
+            currentLanguage={currentLanguage}
+            questions={questions}
+          />
         ) : currentPage === 3 ? (
-          <OptionsPage
+          (<OptionsPage
             currentLanguage={currentLanguage}
             setCurrentLanguage={setCurrentLanguage}
             setCurrentLanguageCode={setCurrentLanguageCode}
-          />
-        ) : currentPage === 4 ? (
+          /> /* : currentPage === 4 ? (
           <IceBreakers />
+        ) */ /*: currentPage === 4 ? (
+          <IceBreakers />
+        ) */)
         ) : null}
       </div>
     </div>

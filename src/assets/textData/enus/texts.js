@@ -31,7 +31,7 @@ export const questionsPageText = [
     categoryLabel: "Category",
     categoryBox: "Select Here",
     randomButton: "Give me a quick random question",
-    suggestCategoryButton: "Suggest me one question from this Category"
+    suggestCategoryButton: "Suggest me one question from this Category",
   },
 ];
 
@@ -54,19 +54,31 @@ export const createSessionPageText = [
     dateLabel: "* When?",
     feelingLabel: "* How is your team member feeling?",
     feelingPlaceholder: "Choose a dominant feeling",
+    modalButtomText: "Want to add Questions to this 1-1?",
     notesLabel:
-      "Use this field to add comments, next steps or whatever you feel is important.",
+      "...or use this field to add comments, next steps or whatever you feel is important.",
     notesPlaceholder: "Eric is glad his mother came for his graduation.",
     addNoteButtomText: "Add Note",
     summary: "Summary",
     summaryBadge: "Add a team member, a date and feeling.",
+    copyToClipButton: "Copy to Clipboard",
     toastText: "Go CTRL+V anywhere!",
     summaryText: [
       {
         preDateText: "On",
         preTeamMemberText: "I talked with",
         preFeelingText: "The main feeling of this session was",
-        preNotesText: "My Notes: ",
+        preSuggestedQuestions: "Suggested Questions",
+        preNotesText: "My Notes",
+      },
+    ],
+    modalTexts: [
+      {
+        suggestionText: "OOW Suggestion:",
+        freeChoiceText: "Or choose below:",
+        categoryLabel: "Category",
+        categoryBox: "Select Here",
+        toastText: "Added!"
       },
     ],
     feelingsEmojis: [
@@ -106,7 +118,7 @@ export const createSessionPageText = [
         value: "angry",
         label: `😡 Angry`,
       },
-    ]
+    ],
   },
 ];
 
@@ -117,7 +129,6 @@ export const optionsPageText = [
     saveButtom: "Save",
     toastSaveText: "Saved!",
     badgeText: "One on Wonder uses your browser language as default.",
-    soonText: "Soon!"
+    soonText: "Soon!",
   },
 ];
-

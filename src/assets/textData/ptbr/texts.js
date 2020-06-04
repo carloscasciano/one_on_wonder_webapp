@@ -11,7 +11,8 @@ export const aboutPageText = [
   {
     mainQuestion:
       "Boas relações no trabalho resultam em mais felicidade e qualidade nas entregas...",
-    subQuestion: "...mas, você e seu time estão construindo estes relacionamentos?",
+    subQuestion:
+      "...mas, você e seu time estão construindo estes relacionamentos?",
     mainText01:
       "Como gestor, inúmeras vezes vi bons projetos serem destruídos por má comunicação, péssima convivência e ego.",
     mainText02:
@@ -31,7 +32,7 @@ export const questionsPageText = [
     categoryLabel: "Categoria",
     categoryBox: "Escolha Aqui",
     randomButton: "Me dê uma pergunta aleatória",
-    suggestCategoryButton: "Sugira-me uma pergunta desta Categoria"
+    suggestCategoryButton: "Sugira-me uma pergunta desta Categoria",
   },
 ];
 
@@ -55,60 +56,72 @@ export const createSessionPageText = [
     dateLabel: "* Quando?",
     feelingLabel: "* Como seu colega se sente:",
     feelingPlaceholder: "Escolha um sentimento dominante",
+    modalButtomText: "Quer adicionar Perguntas neste 1-1?",
     notesLabel:
-      "Use este campo para adicionar comentários, próximos passos ou qualquer coisa que sentir relevante.",
+      "...ou use este campo para adicionar comentários, próximos passos ou qualquer coisa que sentir relevante.",
     notesPlaceholder: "Eric está feliz que sua mãe veio para sua graduação.",
     addNoteButtomText: "Adicione sua Anotação",
     summary: "Resumo",
     summaryBadge: "Adicione um colega, uma data e um sentimento.",
+    copyToClipButton: "CTRL+C",
     toastText: "Pode usar CTRL+V em qualquer lugar!",
     summaryText: [
       {
         preDateText: "Em",
         preTeamMemberText: "Falei com",
         preFeelingText: "O principal sentimento dessa conversa foi",
-        preNotesText: "Minhas anotações: ",
+        preSuggestedQuestions: "Questões Sugeridas",
+        preNotesText: "Minhas anotações",
+      },
+    ],
+    modalTexts: [
+      {
+        suggestionText: "Sugestão OOW:",
+        freeChoiceText: "Ou escolha abaixo:",
+        categoryLabel: "Categoria",
+        categoryBox: "Escolha Aqui",
+        toastText: "Adicionado!"
       },
     ],
     feelingsEmojis: [
       {
-        value: "happy",
+        value: "feliz",
         label: "😀 Feliz",
       },
       {
-        value: "loving",
+        value: "amando",
         label: "😍 Amando",
       },
       {
-        value: "fun",
+        value: "divertido",
         label: "😂 Divertido",
       },
       {
-        value: "neutral",
+        value: "neutro",
         label: `😑 Neutro`,
       },
       {
-        value: "hurt",
+        value: "machucado",
         label: `🤕 Machucado`,
       },
       {
-        value: "overwhelmed",
+        value: "sobrecarregado",
         label: `🥵 Sobrecarregado`,
       },
       {
-        value: "sad",
+        value: "triste",
         label: `🙁 Triste`,
       },
       {
-        value: "anxious",
+        value: "ansioso",
         label: `😰 Ansioso`,
       },
       {
-        value: "angry",
+        value: "raiva",
         label: `😡 Raiva`,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 export const optionsPageText = [
@@ -118,7 +131,6 @@ export const optionsPageText = [
     saveButtom: "Salvar",
     toastSaveText: "Salvo!",
     badgeText: "One on Wonder usa o idioma do seu browser como padrão.",
-    soonText: "Em Breve!"
+    soonText: "Em Breve!",
   },
 ];
-
