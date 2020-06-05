@@ -49,6 +49,20 @@ function App() {
     });
   };
 
+  const GAhandlerEnterQuestionsModalOnSessionMenu = () => {
+    ReactGA.event({
+      category: "Open Questions Modal",
+      action: "Entered Modal Menu",
+    });
+  };
+
+  const GAhandlerUsedCopyToClipboard = () => {
+    ReactGA.event({
+      category: "Clipboard",
+      action: "Used Clipboard",
+    });
+  };
+
   return (
     <div
       style={{
@@ -77,6 +91,8 @@ function App() {
           <CreateSession
             currentLanguage={currentLanguage}
             questions={questions}
+            GAhandlerEnterQuestionsModalOnSessionMenu={GAhandlerEnterQuestionsModalOnSessionMenu}
+            GAhandlerUsedCopyToClipboard={GAhandlerUsedCopyToClipboard}
           />
         ) : currentPage === 2 ? (
           <QuestionsPage

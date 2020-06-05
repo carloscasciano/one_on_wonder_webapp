@@ -79,9 +79,7 @@ export default function CreateSession(props) {
   );
   const copyToClipboardText = `
   ${createSessionPageText[0].summaryText[0].preText}\n\n
-  ${
-    createSessionPageText[0].summaryText[0].preDateText
-  } ${sessionDate},\n${
+  ${createSessionPageText[0].summaryText[0].preDateText} ${sessionDate},\n${
     createSessionPageText[0].summaryText[0].preTeamMemberText
   } ${teamMemberName}.\n${
     createSessionPageText[0].summaryText[0].preFeelingText
@@ -163,6 +161,7 @@ export default function CreateSession(props) {
                   inline
                   onClick={() => {
                     setModalVisibility(true);
+                    props.GAhandlerEnterQuestionsModalOnSessionMenu();
                   }}
                   text={createSessionPageText[0].modalButtomText}
                   size="sm"
@@ -223,7 +222,10 @@ export default function CreateSession(props) {
                         color="gray"
                         textColor="darkGray"
                         size="sm"
-                        onClick={() => handleToastVisibility()}
+                        onClick={() => {
+                          handleToastVisibility();
+                          props.GAhandlerUsedCopyToClipboard();
+                        }}
                       />
                     </CopyToClipboard>
                   </Box>
@@ -264,6 +266,3 @@ export default function CreateSession(props) {
     </div>
   );
 }
-
-
-
