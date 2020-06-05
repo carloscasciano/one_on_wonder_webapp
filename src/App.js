@@ -15,6 +15,8 @@ function initializeReactGA() {
   ReactGA.pageview('/');
 }
 
+initializeReactGA()
+
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
   const [currentLanguage, setCurrentLanguage] = useState(getUserLanguagePack);
