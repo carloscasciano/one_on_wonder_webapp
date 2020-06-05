@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactGA from 'react-ga';
 import MainContainer from "./components/MainContainer";
 import AboutPage from "./pages/AboutPage";
 import QuestionsPage from "./pages/QuestionsPage";
@@ -8,6 +9,11 @@ import OptionsPage from "./pages/OptionsPage";
 import { getUserBrowserLanguage } from "./assets/code_logic/getUserBrowserLanguage";
 import { getUserLanguagePack } from "./assets/code_logic/getUserLanguagePack";
 import { getRawQuestionsData } from "./fetchData/fetchQuestions";
+
+function initializeReactGA() {
+  ReactGA.initialize('UA-168637934-1');
+  ReactGA.pageview('/#');
+}
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
