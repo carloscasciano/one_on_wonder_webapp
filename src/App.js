@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 import MainContainer from "./components/MainContainer";
 import AboutPage from "./pages/AboutPage";
 import QuestionsPage from "./pages/QuestionsPage";
@@ -11,11 +11,10 @@ import { getUserLanguagePack } from "./assets/code_logic/getUserLanguagePack";
 import { getRawQuestionsData } from "./fetchData/fetchQuestions";
 
 function initializeReactGA() {
-  ReactGA.initialize('UA-168637934-1');
-  ReactGA.pageview('/');
+  ReactGA.initialize("UA-168637934-1");
+  ReactGA.pageview("/");
 }
-
-initializeReactGA()
+initializeReactGA();
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -40,6 +39,14 @@ function App() {
 
   const handlePageChange = ({ activeTabIndex, event }) => {
     setCurrentPage(activeTabIndex);
+  };
+
+  /* GA HANDLERS */
+  const GAhandlerQuickQuestion = () => {
+    ReactGA.event({
+      category: "Random Question",
+      action: "Get a Random Question",
+    });
   };
 
   return (
@@ -75,14 +82,16 @@ function App() {
           <QuestionsPage
             currentLanguage={currentLanguage}
             questions={questions}
+            GAhandlerQuickQuestion={GAhandlerQuickQuestion}
           />
-          
         ) : currentPage === 3 ? (
           (<OptionsPage
             currentLanguage={currentLanguage}
             setCurrentLanguage={setCurrentLanguage}
             setCurrentLanguageCode={setCurrentLanguageCode}
           /> /* : currentPage === 4 ? (
+          <IceBreakers />
+        ) */ /*: currentPage === 4 ? (
           <IceBreakers />
         ) */ /*: currentPage === 4 ? (
           <IceBreakers />

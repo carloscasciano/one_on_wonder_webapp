@@ -92,6 +92,7 @@ export default function QuestionsPage(props) {
                       Math.random() * props.questions.length
                     );
                     setRandomQuestion(rand);
+                    props.GAhandlerQuickQuestion()
                   }}
                 />
               </Box>
