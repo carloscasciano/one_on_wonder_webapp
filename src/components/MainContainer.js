@@ -19,10 +19,6 @@ export default function MainContainer(props) {
         <Tabs
           tabs={[
             {
-              text: headerText[0].about,
-              href: "#",
-            },
-            {
               text: headerText[0].session,
               href: "#",
             },
@@ -30,9 +26,13 @@ export default function MainContainer(props) {
               text: headerText[0].questions,
               href: "#",
             },
-            
             {
               text: headerText[0].options,
+              href: "#",
+            },
+
+            {
+              text: headerText[0].about,
               href: "#",
             },
             /* {
