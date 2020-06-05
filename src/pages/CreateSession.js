@@ -77,7 +77,9 @@ export default function CreateSession(props) {
       </Box>
     </>
   );
-  const copyToClipboardText = `${
+  const copyToClipboardText = `
+  ${createSessionPageText[0].summaryText[0].preText}\n\n
+  ${
     createSessionPageText[0].summaryText[0].preDateText
   } ${sessionDate},\n${
     createSessionPageText[0].summaryText[0].preTeamMemberText

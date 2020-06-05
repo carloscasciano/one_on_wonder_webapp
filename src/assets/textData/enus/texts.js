@@ -65,6 +65,7 @@ export const createSessionPageText = [
     toastText: "Go CTRL+V anywhere!",
     summaryText: [
       {
+        preText: "One on Wonder.",
         preDateText: "On",
         preTeamMemberText: "I talked with",
         preFeelingText: "The main feeling of this session was",
