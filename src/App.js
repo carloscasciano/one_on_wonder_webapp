@@ -43,6 +43,8 @@ function App() {
 
   /* GA HANDLERS */
   const GAhandlerQuickQuestion = () => {
+    ReactGA.initialize("UA-168637934-1");
+    console.log("GAhandlerQuickQuestion")
     ReactGA.event({
       category: "Random Question",
       action: "Get a Random Question",
