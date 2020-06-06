@@ -20,9 +20,9 @@ export default function AddQuestionModal(props) {
   );
   const handleToastVisibility = () => {
     setToastVisibility(true);
-    setTimeout(() =>{
-        setToastVisibility(false);
-      }, 2000);
+    setTimeout(() => {
+      setToastVisibility(false);
+    }, 2000);
   };
 
   return (
@@ -37,7 +37,7 @@ export default function AddQuestionModal(props) {
         </Box>
 
         <Text weight="bold" size="lg">
-  {props.texts[0].suggestionText}
+          {props.texts[0].suggestionText}
         </Text>
         <Box
           display="flex"
@@ -53,13 +53,14 @@ export default function AddQuestionModal(props) {
             text={buttonText}
             onClick={() => {
               props.handleAddSuggestedQuestion(randomQuestion.question);
-              handleToastVisibility()
+              props.handleModalVisibility()
+              handleToastVisibility();
             }}
             size="sm"
           />
         </Box>
         <Text weight="bold" size="lg">
-        {props.texts[0].freeChoiceText}
+          {props.texts[0].freeChoiceText}
         </Text>
         <Box marginTop={3}>
           <SelectList
@@ -94,6 +95,7 @@ export default function AddQuestionModal(props) {
                   onClick={() => {
                     props.handleAddSuggestedQuestion(q.question);
                     handleToastVisibility();
+                    props.handleModalVisibility();
                   }}
                   size="sm"
                 />

@@ -166,6 +166,13 @@ export default function CreateSession(props) {
                   text={createSessionPageText[0].modalButtomText}
                   size="sm"
                 />
+                <Box marginTop={4}>
+                  {sessionSuggestedQuestions.map((q) => (
+                    <Text key={Math.random()} size="lg">
+                      - {q}
+                    </Text>
+                  ))}{" "}
+                </Box>
               </Box>
               <Box maxWidth="480px" marginTop={4} marginBottom={4}>
                 <TextArea

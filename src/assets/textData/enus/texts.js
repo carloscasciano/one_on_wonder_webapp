@@ -54,7 +54,7 @@ export const createSessionPageText = [
     dateLabel: "When?",
     feelingLabel: "How is your team member feeling?",
     feelingPlaceholder: "Choose a dominant feeling",
-    modalButtomText: "Want to add Questions to this 1-1?",
+    modalButtomText: "Want to add a Question to this 1-1?",
     notesLabel:
       "...or use this field to add comments, next steps or whatever you feel is important.",
     notesPlaceholder: "Eric is glad his mother came for his graduation.",
