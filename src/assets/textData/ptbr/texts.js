@@ -58,16 +58,18 @@ export const createSessionPageText = [
     feelingPlaceholder: "Escolha um sentimento dominante",
     modalButtomText: "Quer adicionar uma Pergunta neste 1-1?",
     notesLabel:
-      "...ou use este campo para adicionar comentários, próximos passos ou qualquer coisa que sentir relevante.",
+      "Use este campo para adicionar comentários, próximos passos ou qualquer coisa que sentir relevante.",
     notesPlaceholder: "Eric está feliz, seu projeto foi aprovado.",
     addNoteButtomText: "Adicione sua Anotação",
+    questionsText: "Perguntas",
+    notesText: "Anotações",
     summary: "Resumo",
-    summaryBadge: "Adicione um colega para abrir o Resumo.",
+    summaryBadge: "Adicione um colega para abrir Perguntas, Anotações e Resumo.",
     copyToClipButton: "CTRL+C",
     toastText: "Pode usar CTRL+V em qualquer lugar!",
     summaryText: [
       {
-        preText: "One on Wonder.",
+        preText: "One on Wonder 1-1",
         preDateText: "Em",
         preTeamMemberText: "Falei com",
         preFeelingText: "O principal sentimento dessa conversa foi",

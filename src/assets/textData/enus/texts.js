@@ -56,16 +56,18 @@ export const createSessionPageText = [
     feelingPlaceholder: "Choose a dominant feeling",
     modalButtomText: "Want to add a Question to this 1-1?",
     notesLabel:
-      "...or use this field to add comments, next steps or whatever you feel is important.",
+      "Use this field to add comments, next steps or whatever you feel is important.",
     notesPlaceholder: "Eric is glad his project got approved.",
     addNoteButtomText: "Add Note",
+    questionsText: "Questions",
+    notesText: "Notes",
     summary: "Summary",
-    summaryBadge: "Add a team member to open Summary.",
+    summaryBadge: "Add a team member to open Questions, Notes and Summary.",
     copyToClipButton: "Copy to Clipboard",
     toastText: "Go CTRL+V anywhere!",
     summaryText: [
       {
-        preText: "One on Wonder.",
+        preText: "One on Wonder 1-1",
         preDateText: "On",
         preTeamMemberText: "I talked with",
         preFeelingText: "The main feeling of this session was",

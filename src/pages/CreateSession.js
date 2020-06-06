@@ -78,7 +78,7 @@ export default function CreateSession(props) {
     </>
   );
   const copyToClipboardText = `
-  ${createSessionPageText[0].summaryText[0].preText}\n\n
+  ${createSessionPageText[0].summaryText[0].preText}\n
   ${createSessionPageText[0].summaryText[0].preDateText} ${sessionDate},\n${
     createSessionPageText[0].summaryText[0].preTeamMemberText
   } ${teamMemberName}.\n${
@@ -162,6 +162,15 @@ export default function CreateSession(props) {
           {teamMemberName !== "" ? (
             <>
               <Divider />
+              <Box
+                marginTop={4}
+                marginBottom={3}
+                display="flex"
+                alignItems="center"
+                justifyContent="start"
+              >
+                <Heading size="sm">{createSessionPageText[0].questionsText}</Heading>
+              </Box>
 
               <Box maxWidth="480px" marginTop={4}>
                 <Button
@@ -173,12 +182,22 @@ export default function CreateSession(props) {
                   text={createSessionPageText[0].modalButtomText}
                   size="sm"
                 />
-                <Box marginTop={4}>
+                <Box marginTop={4} marginBottom={4}>
                   {sessionSuggestedQuestions.map((q) => (
                     <Text key={Math.random()} size="lg">
                       - {q}
                     </Text>
                   ))}{" "}
+                </Box>
+                <Divider />
+                <Box
+                  marginTop={4}
+                  marginBottom={3}
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="start"
+                >
+                  <Heading size="sm">{createSessionPageText[0].notesText}</Heading>
                 </Box>
               </Box>
               <Box maxWidth="480px" marginTop={4} marginBottom={4}>
@@ -226,17 +245,19 @@ export default function CreateSession(props) {
           ) : null}
 
           <Box marginTop={3}>
-            <Box
-              marginBottom={3}
-              display="flex"
-              alignItems="center"
-              justifyContent="start"
-            >
-              <Heading size="sm">{createSessionPageText[0].summary}</Heading>
-            </Box>
             <Box marginTop={4}>
               {teamMemberName !== "" ? (
                 <>
+                  <Box
+                    marginBottom={3}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="start"
+                  >
+                    <Heading size="sm">
+                      {createSessionPageText[0].summary}
+                    </Heading>
+                  </Box>
                   <Text size="lg">{summaryText}</Text>
                   <Box marginTop={3}>
                     <CopyToClipboard text={copyToClipboardText}>
