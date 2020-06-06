@@ -57,7 +57,7 @@ export const createSessionPageText = [
     modalButtomText: "Want to add a Question to this 1-1?",
     notesLabel:
       "...or use this field to add comments, next steps or whatever you feel is important.",
-    notesPlaceholder: "Eric is glad his mother came for his graduation.",
+    notesPlaceholder: "Eric is glad his project got approved.",
     addNoteButtomText: "Add Note",
     summary: "Summary",
     summaryBadge: "Add a team member to open Summary.",
@@ -75,7 +75,7 @@ export const createSessionPageText = [
     ],
     modalTexts: [
       {
-        suggestionText: "OOW Suggestion:",
+        suggestionText: "Suggestion:",
         freeChoiceText: "Or choose below:",
         categoryLabel: "Category",
         categoryBox: "Select Here",

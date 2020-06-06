@@ -109,6 +109,13 @@ export default function CreateSession(props) {
     );
   };
 
+  const handleTextAreaTextEnter = (event) => {
+    if (event.keyCode === 13) {
+      setSessionNotes(sessionNotes.concat(userSingleNote));
+      setUserSingleNote("");
+    }
+  };
+
   return (
     <div>
       {modalVisibility === false ? (
@@ -175,15 +182,18 @@ export default function CreateSession(props) {
                 </Box>
               </Box>
               <Box maxWidth="480px" marginTop={4} marginBottom={4}>
-                <TextArea
-                  inline
-                  id="notes"
-                  onChange={({ value }) => setUserSingleNote(value)}
-                  placeholder={createSessionPageText[0].notesPlaceholder}
-                  label={createSessionPageText[0].notesLabel}
-                  value={userSingleNote}
-                  type="text"
-                />
+                <form onKeyUp={(event) => handleTextAreaTextEnter(event)}>
+                  <TextArea
+                    inline
+                    id="notes"
+                    onChange={({ value }) => setUserSingleNote(value)}
+                    placeholder={createSessionPageText[0].notesPlaceholder}
+                    label={createSessionPageText[0].notesLabel}
+                    value={userSingleNote}
+                    type="text"
+                  />
+                </form>
+
                 <Box marginTop={2}>
                   <Button
                     inline
@@ -202,6 +212,13 @@ export default function CreateSession(props) {
                     textColor="darkGray"
                     size="sm"
                   />
+                  <Box marginTop={4}>
+                    {sessionNotes.map((n) => (
+                      <Text key={Math.random()} size="lg">
+                        - {n}
+                      </Text>
+                    ))}{" "}
+                  </Box>
                 </Box>
               </Box>
               <Divider />
