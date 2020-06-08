@@ -16,7 +16,7 @@ export const aboutPageText = [
     mainText01:
       "Como gestor, inúmeras vezes vi bons projetos serem destruídos por má comunicação, péssima convivência e ego.",
     mainText02:
-      "Tambem experenciei como as conversas de 1-1 e a investigação sobre o sentimento do seu time eram excelentes para criar um bom ambiente de trabalho. Foi por isso que o One on Wonder nasceu.",
+      "Tambem vivi na pele como as conversas de 1-1 e a investigação sobre o sentimento do seu time eram excelentes para criar um bom ambiente de trabalho. Foi por isso que o One on Wonder nasceu.",
     mainText03:
       "Esta ferramenta possui ~150 perguntas separadas em categorias que você pode usar para conversar com seu time. Além disso, você pode construir uma sessão de 1-1 com qualquer pessoa, configurar o sentimento do momento e fazer algumas anotações. São simples ferramentas que podem ajudar a alcançar um lugar mais saudável para trabalhar e viver.",
     contactInfo:
