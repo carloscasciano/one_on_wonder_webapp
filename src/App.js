@@ -3,7 +3,6 @@ import ReactGA from "react-ga";
 import MainContainer from "./components/MainContainer";
 import AboutPage from "./pages/AboutPage";
 import QuestionsPage from "./pages/QuestionsPage";
-/* import IceBreakers from "./pages/IceBreakers"; */
 import CreateSession from "./pages/CreateSession";
 import OptionsPage from "./pages/OptionsPage";
 import { getUserBrowserLanguage } from "./assets/code_logic/getUserBrowserLanguage";
