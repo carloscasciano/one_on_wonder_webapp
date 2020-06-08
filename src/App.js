@@ -11,7 +11,7 @@ import { getUserLanguagePack } from "./assets/code_logic/getUserLanguagePack";
 import { getRawQuestionsData } from "./fetchData/fetchQuestions";
 
 function initializeReactGA() {
-  ReactGA.initialize("UA-168637934-1");
+  ReactGA.initialize(process.env.REACT_APP_GA_KEY);
   ReactGA.pageview("/");
 }
 initializeReactGA();
