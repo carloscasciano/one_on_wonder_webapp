@@ -107,7 +107,7 @@ export const createSessionPageText = [
       },
       {
         value: "overwhelmed",
-        label: `🥵 Overwhelmed`,
+        label: `🥵 Burnout`,
       },
       {
         value: "sad",
