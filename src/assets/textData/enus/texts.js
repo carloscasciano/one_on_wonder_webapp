@@ -106,7 +106,7 @@ export const createSessionPageText = [
         label: `🤕 Hurt`,
       },
       {
-        value: "overwhelmed",
+        value: "burnout",
         label: `🥵 Burnout`,
       },
       {
