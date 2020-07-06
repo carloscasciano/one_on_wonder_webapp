@@ -85,6 +85,8 @@ function App() {
         />
 
         {currentPage === 0 ? (
+          <AboutPage currentLanguage={currentLanguage} />
+        ) : currentPage === 1 ? (
           <CreateSession
             currentLanguage={currentLanguage}
             questions={questions}
@@ -93,20 +95,18 @@ function App() {
             }
             GAhandlerUsedCopyToClipboard={GAhandlerUsedCopyToClipboard}
           />
-        ) : currentPage === 1 ? (
+        ) : currentPage === 2 ? (
           <QuestionsPage
             currentLanguage={currentLanguage}
             questions={questions}
             GAhandlerQuickQuestion={GAhandlerQuickQuestion}
           />
-        ) : currentPage === 2 ? (
+        ) : currentPage === 3 ? (
           <OptionsPage
             currentLanguage={currentLanguage}
             setCurrentLanguage={setCurrentLanguage}
             setCurrentLanguageCode={setCurrentLanguageCode}
           />
-        ) : currentPage === 3 ? (
-          <AboutPage currentLanguage={currentLanguage} />
         ) : null}
       </div>
     </div>

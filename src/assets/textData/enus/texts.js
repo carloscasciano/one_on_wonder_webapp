@@ -10,14 +10,14 @@ export const headerText = [
 export const aboutPageText = [
   {
     mainQuestion:
-      "Good relationships at work results in happiness and more quality on deliveries...",
-    subQuestion: "...but are you and your team building these relations?",
+      "Hi! Welcome to One on Wonder...",
+    subQuestion: "...are you ready to improve your coworkers relationships?",
     mainText01:
-      "As a manager, countless times I've seen good projects and teams being destroyed by miscommunication, terrible coexistence and ego.",
+      "One on Wonder is a tool to help you as a manager to create better one on one and feedback sessions with your team.",
     mainText02:
-      "I also experienced how 1-1 meetings and exploring your team feelings were great to build a good work environment. This is why One on Wonder was born. ",
+      "You can create a One on One Session, choose the feeling from this meeting, add questions and copy it anywhere you like: ",
     mainText03:
-      "This tool has ~150 questions separated by categories that you can use to talk to your team members. Also, there is an area where you can build an 1-1 session with anyone you like, set overall feeling and make some notes. These are simple tools that can help you achieve a healthier place to work and live.",
+      "Or you can choose a specific question from our directory or generate a random one:",
     contactInfo:
       "If you want to colaborate somehow, suggest anything or just give some feedback, please contact me on carlos.casciano@gmail.com or any other social media I'm in. I'll be glad to help.",
     specialThanks: "Thank you very much!",

@@ -27,11 +27,13 @@ export default function AboutPage(props) {
           <Text size="lg" margin>
             {aboutPageText[0].mainText02}
           </Text>
+          <img src="/gifs/1-1.gif" alt="How to use 1-1" style={{height: "350px", margin: "15px"}}/>
         </Box>
         <Box marginTop={5}>
           <Text size="lg" margin>
             {aboutPageText[0].mainText03}
           </Text>
+          <img src="/gifs/inspire.gif" alt="How to use Inspire" style={{height: "350px", margin: "15px"}}/>
         </Box>
         <Box marginTop={5}>
           <Text size="lg" margin>
