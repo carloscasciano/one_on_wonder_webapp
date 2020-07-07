@@ -13,9 +13,9 @@ export const aboutPageText = [
       "Hi!👋 Welcome to One on Wonder...",
     subQuestion: "...are you ready to improve your coworkers relationships?",
     mainText01:
-      "One on Wonder is a tool to help you as a manager to create better one on one and feedback sessions with your team.",
+      "One on Wonder is a tool that helps you to create better feedback sessions with your team.",
     mainText02:
-      "You can create a One on One Session, choose the feeling from this meeting, add questions and copy it anywhere you like: ",
+      "You can create an `One on One Session`, choose the feeling from this meeting, add questions and copy it anywhere you like: ",
     mainText03:
       "Or you can choose a specific question from our directory or generate a random one:",
     contactInfo:
