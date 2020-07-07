@@ -10,7 +10,7 @@ export const headerText = [
 export const aboutPageText = [
   {
     mainQuestion:
-      "Hi! Welcome to One on Wonder...",
+      "Hi!👋 Welcome to One on Wonder...",
     subQuestion: "...are you ready to improve your coworkers relationships?",
     mainText01:
       "One on Wonder is a tool to help you as a manager to create better one on one and feedback sessions with your team.",

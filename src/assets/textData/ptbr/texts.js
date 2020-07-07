@@ -10,11 +10,11 @@ export const headerText = [
 export const aboutPageText = [
   {
     mainQuestion:
-      "Olá, Bem-vindo ao One on Wonder...",
+      "Olá!👋 Esse é o One on Wonder...",
     subQuestion:
-      "...você está pronto para melhorar o relacionamento do seu time?",
+      "...vamos melhorar o relacionamento do seu time?",
     mainText01:
-      "One on Wonder é uma ferramenta para ajudar você, gestor, a criar melhorer sessões de feedback e conversas com seu time.",
+      "One on Wonder é uma ferramenta para ajudar você, gestor@, a criar melhores sessões de feedback e conversas com sua equipe.",
     mainText02:
       "Você pode criar uma sessão de 1-1, escolher o sentimento da reunião, adicionar questões e copiar as informações para onde quiser: ",
     mainText03:
